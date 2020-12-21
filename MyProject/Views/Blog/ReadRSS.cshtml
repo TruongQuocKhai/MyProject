@@ -1,0 +1,161 @@
+﻿
+@{
+    ViewBag.Title = "ReadRSS";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<!--css-->
+<style>
+    .list-rss {
+        width: 100%;
+        padding: 2px 2px;
+        margin-bottom: 0;
+    }
+
+        .list-rss .icon-rss {
+            float: right;
+            display: block;
+            padding: 3px 3px 0;
+            width: 52px;
+            height: 32px;
+            background: #D7BDE2;
+            color: black;
+        }
+
+        .list-rss .txt-rss {
+            float: left;
+            color: black;
+        }
+
+    .breadcrumbb .start a {
+        font-weight: 700;
+        color: #E74C3C;
+        background: #9055A2;
+        border-left: 3px solid #E74C3C;
+        padding: 0 8px;
+        margin-left: 0;
+        z-index: 99;
+    }
+
+    .breadcrumbb li a {
+        background: #9055A2;
+        padding: 0 8px 0 15px;
+        height: 26px;
+        display: block;
+        float: left;
+        font: 400 14px/25px arial;
+        white-space: nowrap;
+        position: relative;
+        color: #000;
+    }
+
+    .breadcrumbb .start a:after {
+        border-left: 13px solid #9055A2 !important;
+    }
+
+    .breadcrumbb li a:after {
+        content: "";
+        position: absolute;
+        right: -13px;
+        top: 0;
+        border-left: 13px solid #d3d3d3;
+        border-top: 13px solid transparent;
+        border-bottom: 13px solid transparent;
+        z-index: 999;
+    }
+</style>
+<!--/css-->
+<section class="hero hero-page gray-bg padding-small">
+    <div class="container">
+        <div class="row d-flex">
+            <div class="col-lg-9 order-2 order-lg-1">
+                <h2>Trang đọc tin tức RSS</h2>
+            </div>
+            <div class="col-lg-3 text-right order-1 order-lg-2">
+                <ul class="breadcrumb justify-content-lg-end">
+                    <li class="breadcrumb-item"><a href="~/">Trang Chủ</a></li>
+                    <li class="breadcrumb-item active">RSS</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="hero hero-page gray-bg padding-small menu-category">
+    <h4 style="margin-left:12.5%;">Danh mục RSS</h4>
+    <div class="container content-menu">
+        <div class="row d-flex">
+            <ul class="breadcrumbb left" style="padding: 5px 0 0 0; list-style-type:none;">
+                <li class="start">
+                    <h4>
+                        <a href="#" title="RSS">RSS</a>
+                    </h4>
+                </li>
+            </ul>
+            <!-- Partial Content Category-->
+            @Html.Action("Partial_ContentCategory", "Blog")
+        </div>
+    </div>
+</section>
+<div class="container">
+    <!-- Đọc tin RSS-->
+    @using (Html.BeginForm("ReadRSS", "Blog"))
+    {
+        <input type="URL" name="url" placeholder="Nhập địa chỉ đọc RSS" class="form-control" value="@ViewBag.URL" style="min-width:100%;" />
+        <br />
+        <input type="submit" value="Click vào để lấy tin RSS" class="btn btn-danger" />
+    }
+    <br />
+    <div class="basket">
+        <div class="basket-holder">
+            <div class="basket-header">
+                <div class="row">
+                    <div class="col-2">Tiêu đề</div>
+                    <div class="col-4">Link</div>
+                    <div class="col-4">Mô tả</div>
+                    <div class="col-2">Ngày đăng</div>
+                </div>
+            </div>
+            <div class="basket-body">
+                @if (ViewBag.RSSFeed != null)
+                {
+                    foreach (var item in ViewBag.RSSFeed)
+                    {
+                        <div class="item">
+                            <div class="row d-flex align-items-center">
+                                <div class="col-2">@item.Title</div>
+                                <div class="col-4"><a href="@item.Link">@item.Link</a></div>
+                                <div class="col-4">@(Html.Raw(item.Description))</div>
+                                <div class="col-2">@item.CreatedDate</div>
+                            </div>
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+    @*<h3 style="padding-bottom:20px;">Kênh do VnExpress cung cấp</h3>
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-lg-6">
+                    <div class="post post-gray d-flex align-items-center flex-md-row flex-column">
+                        <ul class="list-rss">
+                            <li style="list-style-type: none;">
+                                <a class="txt-rss" href="/Feed">@item.Name</a>
+                                <a class="icon-rss" href="/Feed">RSS <i class="fa fa-rss-square" style="color:#D35400;"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            }
+        </div>*@
+    <!-- Pagination -->
+    @*<nav aria-label="..." class="d-block w-100">
+            <ul class="pagination pagination-custom d-flex justify-content-between d-block w-100">
+                <li class="page-item"><a href="#" class="page-link">&lt; Older posts</a></li>
+                <li class="page-item disabled"><a href="#" tabindex="-1" class="page-link">Newer posts&gt;</a></li>
+            </ul>
+        </nav>*@
+</div>
+

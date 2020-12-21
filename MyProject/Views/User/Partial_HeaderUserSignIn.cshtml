@@ -1,0 +1,50 @@
+﻿<!-- User Sign In-->
+@using MyProject.CommonS;
+@{
+    var session = (UserSignIn)Session[CommonConstSession.USER_SESSION];
+}
+
+<style>
+    .icon-profile {
+        width: 35px;
+        height: auto;
+        font-size: 31px;
+        color: #9055A2;
+    }
+</style>
+
+@if (session == null)
+{
+    <div class=" nav-link" style="margin-right:-15px;">
+        <a href="/dang-nhap"><i class="icon-profile"></i></a> 
+        <a href="/dang-nhap" style="text-decoration:none; font-size:0.8em;">
+            Đăng nhập
+            <br>
+            <small>Tài khoản</small>
+        </a>
+    </div>
+
+    @*<div><a href="/dang-ky" class="btn btn-primary">Đăng ký</a></div>*@
+}
+else
+{
+    <div class="nav-link" style="color:#ff8000; font-style: italic;">Hello! @session.UserName</div>
+    <div><a href="/dang-xuat" class="btn btn-primary">Đăng xuất</a></div>
+}
+
+
+
+@*<div class="Userstyle__Item-xrezqc-1 hMJbVA">
+        <i class="far fa-user"></i>
+        <span class="Userstyle__ItemText-xrezqc-2 gflNjp">
+            <span class="Userstyle__NoWrap-xrezqc-11 cotJxS">Đăng nhập</span>
+            <br>
+            <small>Tài khoản</small>
+        </span><div class="toggler Userstyle__UserDropDown-xrezqc-5 kgAKwJ">
+            <button class="Userstyle__UserDropDownButton-xrezqc-10 kZkOAY">Đăng nhập</button>
+            <button class="Userstyle__UserDropDownButton-xrezqc-10 kZkOAY">Tạo tài khoản</button>
+            <button class="Userstyle__UserDropDownButton-xrezqc-10 eJDKUx"><span class="Userstyle__ButtonIcon-xrezqc-9 kceUvB"><i class="tikicon icon-facebook-white"></i></span>Đăng nhập bằng Facebook</button>
+            <button class="Userstyle__UserDropDownButton-xrezqc-10 dQcowb"><span class="Userstyle__ButtonIcon-xrezqc-9 kceUvB"><i class="tikicon icon-google-white"></i></span>Đăng nhập bằng Google</button>
+            <button class="Userstyle__UserDropDownButton-xrezqc-10 jTNDOl"><span class="Userstyle__ButtonIcon-xrezqc-9 kceUvB"><i class="tikicon icon-zalo"></i></span>Đăng nhập bằng Zalo</button>
+        </div>
+    </div>*@

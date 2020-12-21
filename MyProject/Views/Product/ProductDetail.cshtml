@@ -1,0 +1,64 @@
+﻿@model CommonModels.EF.Product
+@{
+    ViewBag.Title = "ProductDetail";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<section class="hero hero-page gray-bg padding-small">
+    <div class="container">
+        <div class="row d-flex">
+            <div class="col-lg-9 order-2 order-lg-1">
+                <h1>@Model.Name</h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="product-details">
+    <div class="container">
+        <div class="row">
+            <div class="product-images col-lg-6">
+                <div class="ribbon-info text-uppercase">Fresh</div>
+                <div class="ribbon-primary text-uppercase">Sale</div>
+                <div data-slider-id="1" class="owl-carousel items-slider owl-drag">
+                    <div class="item"><img src="@Model.Image" alt=""></div>
+                </div>
+            </div>
+            <div class="details col-lg-6">
+                <div class="d-flex align-items-center justify-content-between flex-column flex-sm-row">
+                    <ul class="price list-inline no-margin">
+                        <li class="list-inline-item current">@Model.Price.GetValueOrDefault(0).ToString("N0")<sup>đ</sup></li>
+                    </ul>
+                </div>
+                <p>
+                    @Model.Description  <!--Mô tả sản phẩm-->
+                </p>
+                <div class="d-flex align-items-center justify-content-center justify-content-lg-start">
+                    <div class="quantity d-flex align-items-center">
+                        <div class="dec-btn">-</div>
+                        <input type="text" value="1" class="quantity-no">
+                        <div class="inc-btn">+</div>
+                    </div>
+                    <select id="product-size" class="bs-select">
+                        <option value="small">Small</option>
+                        <option value="meduim">Medium</option>
+                        <option value="large">Large</option>
+                        <option value="x-large">X-Large</option>
+                    </select>
+                </div>
+                <ul class="CTAs list-inline">
+                    <li class="list-inline-item"><a href="/them-vao-gio-hang?productId=@Model.ID&quantity=1" class="btn btn-template wide"> <i class="icon-cart"></i>Add to Cart</a></li>
+                </ul>
+            </div>
+        </div> 
+        <hr />
+        <!--Thông tin chi tiết sản phẩm-->
+        <div class="content" style="padding-top:20px">
+            <h2 class="text-center">Chi tiết sản phẩm</h2>
+            @Html.Raw(Model.Detail)
+        </div>
+    </div>
+</section>
+
+<!-- Sản phẩm liên quan-->
+@Html.Action("Partial_ListRelateProducts", "Product")

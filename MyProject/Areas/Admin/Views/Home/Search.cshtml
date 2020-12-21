@@ -1,0 +1,86 @@
+﻿@model IEnumerable<MyProject.Models.EF.Product>
+@using MyProject.Models;
+@{
+    ViewBag.Title = "Search";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+@section header{
+    Sản phẩm tìm kiếm
+}
+
+@if (Model.Count() >= 1)
+{
+    <div class="product-status mg-b-30">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="product-status-wrap">
+                        <table>
+                            <tr>
+                                <th>Hình ảnh</th>
+                                <th>Tên sản phẩm </th>
+                                <th>Trạng thái</th>
+                                <th>Ngày đăng</th>
+                                <th>Giá tiền</th>
+                                <th>Thao tác</th>
+                            </tr>
+                            @foreach (var item in Model)
+                            {
+                                <tr id="@item.ID">
+                                    <td><img src="~/Contents/Images/@item.Image" alt="" /></td>
+                                    <td>@item.Name</td>
+                                    <td>
+                                        <button class="pd-setting">Active</button>
+                                    </td>
+                                    <td>@item.CreatedDate</td>
+                                    <td>@item.Price</td>
+                                    <td>
+                                        <button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+                                        <button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                                    </td>
+                                </tr>
+                            }
+                        </table>
+                        @if (ViewBag.TotalPage >= 1)
+                        {
+                            var pageDisplay = (int)ViewBag.MaxPage;
+                            var totalPage = (int)ViewBag.TotalPage;
+                            var currentPage = ((int)ViewBag.Page);
+
+                            // Create numberic link
+                            var startPageIndex = Math.Max(1, currentPage - pageDisplay / 2);
+                            var endPageIndex = Math.Min(totalPage, currentPage + pageDisplay / 2);
+
+                            var link = "/Admin/Home/Search";
+
+                            <div class="custom-pagination">
+                                <ul class="pagination">
+                                    <li class="page-item"><a class="page-link" href="@link?page=@ViewBag.First">Previous</a></li>
+                                    @for (int i = startPageIndex; i <= endPageIndex; i++)
+                                    {
+                                        if (currentPage == i)
+                                        {
+                                            <li class="page-item"><a class="page-link active" href="@link?page=@i">@i</a></li>
+                                        }
+                                        else
+                                        {
+                                            <li class="page-item"><a class="page-link " href="@link?page=@i">@i</a></li>
+                                        }
+                                    }
+                                    <li class="page-item"><a class="page-link" href="@link?page=@ViewBag.Last">Next</a></li>
+                                </ul>
+                            </div>
+                        }
+                        else { }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    <div class="btn btn-danger"> Kết quả tìm kiếm không phù hợp</div>
+}
+
+

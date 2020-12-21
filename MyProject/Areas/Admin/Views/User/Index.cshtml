@@ -1,0 +1,186 @@
+﻿@model IEnumerable<CommonModels.EF.User>
+@{
+    ViewBag.Title = "UsersList";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+@section jsFooter{
+    <script>
+        function Remove(id) {
+            var conf = confirm("Bạn xác nhận muốn xóa! Sau khi xóa dữ liệu sẽ không được phục hồi");
+            if (conf == true) {
+                $.ajax({
+                    url: '/Admin/User/Delete',
+                    type: 'POST',
+                    data: {
+                        'id': id
+                    }
+                }).done(function (data) {
+                    if (data.message == 1) {
+                        alert("Xóa thành công");
+                        location.reload();
+                    }
+                    else {
+                        alert("Xóa thất bại");
+                    }
+                })
+            }
+        }
+
+        var user = {
+            init: function () {
+                user.registerEvents();
+            },
+            registerEvents: function () {
+                $('.btn-active').off('click').on('click', function (e) {
+                    e.preventDefault();
+                    var btn = $(this);
+                    var id = btn.data('id');
+                    $.ajax({
+                        url: "/Admin/User/ChangeStatus",
+                        data: { id: id },
+                        dataType: "json",
+                        type: "POST",
+                        success: function (response) {
+                            console.log(response);
+                            if (response.status == true) {
+                                btn.text('Kích hoạt');
+                            }
+                            else {
+                                btn.text('Đã khóa');
+                            }
+                        }
+                    });
+                });
+            }
+        }
+        user.init();
+    </script>
+
+}
+<style>
+    .btn-outline.red:hover {
+        border-color: #e7505a;
+        color: #fff;
+        background: #e7505a;
+    }
+
+
+    .btn-outline.red {
+        border-color: #e7505a;
+        color: #e7505a;
+        background: 0 0;
+        /*border-radius: 20px;*/
+        width: 27%;
+    }
+
+        .btn-outline.red:active {
+            position: relative;
+            top: 2px;
+        }
+
+    .btn-outline.blue:hover {
+        background-color: #5bc0de;
+        border-color: #46b8da;
+        color: #fff;
+    }
+
+    .btn-outline.blue {
+        border-color: #17a2b8;
+        color: #17a2b8;
+        background: 0 0;
+        /*border-radius: 20px;*/
+        width: 27%;
+    }
+
+        .btn-outline.blue:active {
+            position: relative;
+            top: 2px;
+        }
+
+    /*.btn-active {
+        color: #24caa1;
+    }*/
+</style>
+
+@section header{
+    Quản lý người dùng
+}
+<div class="product-status mg-b-30">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="product-status-wrap">
+                    @*<h4>Products List</h4>*@
+                    <div class="add-product">
+                        <a href="/Admin/User/AddUser" class="btn btn-warning">Thêm user</a>
+                    </div>
+                    <table>
+                        <tr>
+                            <th>Avatar</th>
+                            <th>Tên người dùng</th>
+                            <th>Email</th>
+                            <th>Số điện thoại</th>
+                            <th>Trạng thái</th>
+                            <th>Thao tác</th>
+                        </tr>
+                        @foreach (var item in Model)
+                        {
+                            <tr id="@item.ID">
+                                <td><img src="~/Areas/Admin/Contents/img/avatar/user.png" /></td>
+                                <td>@item.Name</td>
+                                <td>@item.Email</td>
+                                <td>@item.Phone</td>
+
+                                @*<td><a href="#" class="btn-active" data-id="@item.ID">@Html.Raw(item.Status ? "<span class='pd-setting'>Kích hoạt</span>" : "<span class='ds-setting'>Đã khoá</span>")</a></td>*@
+
+                                <td><a href="#" class="btn-active" data-id="@item.ID" >@Html.Raw(item.Status ? "<strong>Kích hoạt</strong>" : "Đã khoá")</a></td>
+
+                                <td>
+                                    <a href="/Admin/User/EditUser/@item.ID"><i class="fa fa-pencil-square-o btn btn-icon-only btn-circle btn-outline blue"></i></a>
+                                    @*<a title="Cập nhật" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>*@
+                                    @*<button onclick="xoa(@item.ID)" title="Trash" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button>*@
+                                    <a onclick="Remove(@item.ID)"><i class="fa fa-trash btn btn-icon-only btn-circle btn-outline red"></i></a>
+                                </td>
+                            </tr>
+                        }
+                    </table>
+                    @if (ViewBag.TotalPage >= 1)
+                    {
+                        var pageDisplay = (int)ViewBag.MaxPage;
+                        var totalPage = (int)ViewBag.TotalPage;
+                        var currentPage = ((int)ViewBag.Page);
+
+                        // Create numberic link
+                        var startPageIndex = Math.Max(1, currentPage - pageDisplay / 2);
+                        var endPageIndex = Math.Min(totalPage, currentPage + pageDisplay / 2);
+
+                        var link = "/Admin/User/Index";
+
+                        <div class="custom-pagination">
+                            <ul class="pagination">
+                                <li class="page-item"><a class="page-link" href="@link?page=@ViewBag.First">Prev</a></li>
+                                @for (int i = startPageIndex; i <= endPageIndex; i++)
+                                {
+                                    if (currentPage == i)
+                                    {
+                                        <li class="page-item"><a class="page-link active" href="@link?page=@i">@i</a></li>
+                                    }
+                                    else
+                                    {
+                                        <li class="page-item"><a class="page-link " href="@link?page=@i">@i</a></li>
+                                    }
+                                }
+                                <li class="page-item"><a class="page-link" href="@link?page=@ViewBag.Last">Next</a></li>
+                            </ul>
+                        </div>
+                    }
+                    else { }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+

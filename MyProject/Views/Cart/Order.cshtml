@@ -1,0 +1,148 @@
+﻿@model List<MyProject.Models.CartModel>
+@{
+    ViewBag.Title = "Đặt hàng";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+@if (Model.Count > 0)
+{
+    <section class="shopping-cart">
+        <div class="container">
+            <div class="basket">
+                <div class="basket-holder">
+                    <div class="basket-header">
+                        <div class="row">
+                            <div class="col-5">Sản phẩm</div>
+                            <div class="col-2 text-center">Giá bán</div>
+                            <div class="col-2 text-center">Số lượng</div>
+                            <div class="col-2 text-center">Tổng tiền</div>
+                        </div>
+                    </div>
+                    <div class="basket-body">
+                        <!-- Product-->
+                        @foreach (var item in Model)
+                        {
+                            <div class="item">
+                                <div class="row d-flex align-items-center">
+                                    <div class="col-5">
+                                        <div class="d-flex align-items-center">
+                                            <img src="@item.Product.Image" alt="..." class="img-fluid">
+                                            <div class="title">
+                                                <h5>@item.Product.Name</h5><span class="text-muted">Size: Large</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-2 text-center"><span>@item.Product.Price.GetValueOrDefault(0).ToString("N0")<sup>đ</sup></span></div>
+                                    <div class="col-2 text-center">
+                                        <input type="text" data-id="@item.Product.ID" value="@item.Quantity" size="1" readonly style="text-align:center;">
+                                    </div>
+                                    <div class="col-2 text-center"><span>@((item.Product.Price.GetValueOrDefault(0) * item.Quantity).ToString("N0"))<sup>đ</sup></span></div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Form nhập thông tin đặt hàng-->
+    <section>
+        <div class="container">
+            <header class="mb-5 col-md-7">
+                <h2 class="heading-line">Nhập thông tin của bạn</h2>
+                <hr />
+            </header>
+            <div class="row">
+                <div class="col-md-7">
+                    @using (Html.BeginForm("Order", "Cart", FormMethod.Post))
+                    {
+                        if (Session["User"] == null)
+                        {
+                            <div class="custom-form form">
+                                <div class="controls">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label for="name" class="form-label">Họ và Tên</label>
+                                                <input type="text" name="Name" id="Name" placeholder="Nhập Tên" required="required" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label for="surname" class="form-label">Số Điện Thoại</label>
+                                                <input name="mobile" type="tel" maxlength="11" spellcheck="false" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" class="form-control" required="required" placeholder="Nhập số điện thoại">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email" class="form-label">Email</label>
+                                        <input type="email" name="email" id="email" placeholder="Nhập Email" required="required" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="message" class="form-label">Địa Chỉ Nhận Hàng</label>
+                                        <textarea rows="4" name="address" id="address" placeholder="Nhập địa chỉ" required="required" class="form-control"></textarea>
+                                    </div>
+                                    <button type="submit" class="btn btn-template">Gửi Đơn Hàng</button>
+                                </div>
+                            </div>
+                        }
+                        else
+                        {
+                            foreach (var item in ViewBag.GetInforUser)
+                            {
+                                <div class="custom-form form">
+                                    <div class="controls">
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="name" class="form-label">Họ và Tên</label>
+                                                    <input type="text" value="@item.Name" name="name" placeholder="Nhập Tên" required="required" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="surname" class="form-label">Số Điện Thoại</label>
+                                                    <input type="text" value="@item.Phone" name="mobile" placeholder="Nhập SĐT" required="required" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="email" class="form-label">Email</label>
+                                            <input type="email" value="@item.Email" name="email" placeholder="Nhập Email" required="required" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="message" class="form-label">Địa chỉ nhận hàng</label>
+                                            <textarea rows="4" name="address" value="@item.Address" placeholder="Nhập địa chỉ" required="required" class="form-control"></textarea>
+                                        </div>
+                                        <button type="submit" class="btn btn-template">Gửi Đơn Hàng</button>
+                                    </div>
+                                </div>
+                            }
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+    </section>
+}
+else { }
+
+<!--Code validate -->
+@*<script>
+        $('#customer-form').validate({
+            reles: {
+                name: {
+                    required: true
+                },
+                mobile: {
+                    required: true
+                },
+                email: {
+                    required: true
+                },
+                address: {
+                    required: true
+                },
+            }
+        });
+    </script>*@

@@ -1,0 +1,10 @@
+﻿
+@model List<CommonModels.EF.ProductCategory>
+<li>
+    <a href="/tat-ca-san-pham" class="dropdown-item">Tất cả Sản Phẩm</a>
+</li>
+@foreach (var item in Model)
+{
+    <li><a href="/san-pham/@item.MetaTitle-@item.ID" class="dropdown-item">@item.Name</a></li>
+}
+

@@ -1,0 +1,164 @@
+﻿
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Login | Admin</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- favicon
+        ============================================ -->
+    <link rel="shortcut icon" type="image/x-icon" href="~/Areas/Admin/Contents/img/logo/TK.png">
+    <!-- Google Fonts
+        ============================================ -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900" rel="stylesheet">
+    <!-- Bootstrap CSS
+        ============================================ -->
+    <link rel="stylesheet" href="/Areas/Admin/Contents/css/bootstrap.min.css">
+    <!-- Bootstrap CSS
+        ============================================ -->
+    <link rel="stylesheet" href="/Areas/Admin/Contents/css/font-awesome.min.css">
+    <!-- owl.carousel CSS
+        ============================================ -->
+    <link rel="stylesheet" href="/Areas/Admin/Contents/css/owl.carousel.css">
+    <link rel="stylesheet" href="/Areas/Admin/Contents/css/owl.theme.css">
+    <link rel="stylesheet" href="/Areas/Admin/Contents/css/owl.transitions.css">
+    <!-- animate CSS
+        ============================================ -->
+    <link rel="stylesheet" href="/Areas/Admin/Contents/css/animate.css">
+    <!-- normalize CSS
+        ============================================ -->
+    <link rel="stylesheet" href="/Areas/Admin/Contents/css/normalize.css">
+    <!-- main CSS
+        ============================================ -->
+    <link rel="stylesheet" href="/Areas/Admin/Contents/css/main.css">
+    <!-- morrisjs CSS
+        ============================================ -->
+    <link rel="stylesheet" href="/Areas/Admin/Contents/css/morrisjs/morris.css">
+    <!-- mCustomScrollbar CSS
+        ============================================ -->
+    <link rel="stylesheet" href="/Areas/Admin/Contents/css/scrollbar/jquery.mCustomScrollbar.min.css">
+    <!-- metisMenu CSS
+        ============================================ -->
+    <link rel="stylesheet" href="/Areas/Admin/Contents/css/metisMenu/metisMenu.min.css">
+    <link rel="stylesheet" href="/Areas/Admin/Contents/css/metisMenu/metisMenu-vertical.css">
+    <!-- calendar CSS
+        ============================================ -->
+    <link rel="stylesheet" href="/Areas/Admin/Contents/css/calendar/fullcalendar.min.css">
+    <link rel="stylesheet" href="/Areas/Admin/Contents/css/calendar/fullcalendar.print.min.css">
+    <!-- forms CSS
+        ============================================ -->
+    <link rel="stylesheet" href="/Areas/Admin/Contents/css/form/all-type-forms.css">
+    <!-- style CSS
+        ============================================ -->
+    <link rel="stylesheet" href="/Areas/Admin/Contents/style.css">
+    <!-- responsive CSS
+        ============================================ -->
+    <link rel="stylesheet" href="/Areas/Admin/Contents/css/responsive.css">
+    <!-- modernizr JS
+        ============================================ -->
+    <script src="/Areas/Admin/Contents/js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+
+<body>
+    <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+    <div class="color-line"></div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="back-link back-backend">
+                    <a href="index.html" class="btn btn-primary">Back to Dashboard</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"></div>
+            <div class="col-md-4 col-md-4 col-sm-4 col-xs-12">
+                <div class="text-center m-b-md custom-login">
+                    <h3 style="color: white;">Vui lòng đăng nhập để đến trang quản trị</h3>
+                </div>
+                <div class="hpanel">
+                    <div class="panel-body">
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        @using (Html.BeginForm("Index", "SignIn"))
+                        {
+                            <div class="form-group">
+                                <label class="control-label" for="username">Nhập email</label>
+                                <input type="text" placeholder="example@gmail.com" title="Please enter you username" required="" value="" name="Email" class="form-control">
+                                @Html.ValidationMessage("Email",new { @class = "text-danger"})
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label" for="password">Nhập mật khẩu</label>
+                                <input type="password" title="Please enter your password" placeholder="******" required="" value="" name="Password" id="password" class="form-control">
+                                @Html.ValidationMessage("Password", new {@class =  "text-danger" }) 
+                            </div>
+                            @*<div class="checkbox login-checkbox">
+                                    <label>
+                                        <input type="checkbox" class="i-checks"> Remember me
+                                    </label>
+                                    <p class="help-block small">(if this is a private computer)</p>
+                                </div>*@
+                            <button class="btn btn-success btn-block loginbtn">Login</button>
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"></div>
+        </div>
+    </div>
+
+    <!-- jquery
+        ============================================ -->
+    <script src="/Areas/Admin/Contents/js/vendor/jquery-1.11.3.min.js"></script>
+    <!-- bootstrap JS
+        ============================================ -->
+    <script src="/Areas/Admin/Contents/js/bootstrap.min.js"></script>
+    <!-- wow JS
+        ============================================ -->
+    <script src="/Areas/Admin/Contents/js/wow.min.js"></script>
+    <!-- price-slider JS
+        ============================================ -->
+    <script src="/Areas/Admin/Contents/js/jquery-price-slider.js"></script>
+    <!-- meanmenu JS
+        ============================================ -->
+    <script src="/Areas/Admin/Contents//jquery.meanmenu.js"></script>
+    <!-- owl.carousel JS
+        ============================================ -->
+    <script src="/Areas/Admin/Contents/js/owl.carousel.min.js"></script>
+    <!-- sticky JS
+        ============================================ -->
+    <script src="/Areas/Admin/Contents/js/jquery.sticky.js"></script>
+    <!-- scrollUp JS
+        ============================================ -->
+    <script src="/Areas/Admin/Contents/js/jquery.scrollUp.min.js"></script>
+    <!-- mCustomScrollbar JS
+        ============================================ -->
+    <script src="/Areas/Admin/Contents/js/scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="/Areas/Admin/Contents/js/scrollbar/mCustomScrollbar-active.js"></script>
+    <!-- metisMenu JS
+        ============================================ -->
+    <script src="/Areas/Admin/Contents/js/metisMenu/metisMenu.min.js"></script>
+    <script src="/Areas/Admin/Contents/js/metisMenu/metisMenu-active.js"></script>
+    <!-- tab JS
+        ============================================ -->
+    <script src="/Areas/Admin/Contents/js/tab.js"></script>
+    <!-- icheck JS
+        ============================================ -->
+    <script src="/Areas/Admin/Contents/js/icheck/icheck.min.js"></script>
+    <script src="/Areas/Admin/Contents/js/icheck/icheck-active.js"></script>
+    <!-- plugins JS
+        ============================================ -->
+    <script src="/Areas/Admin/Contents/js/plugins.js"></script>
+    <!-- main JS
+        ============================================ -->
+    <script src="/Areas/Admin/Contents/js/main.js"></script>
+</body>
+
+</html>

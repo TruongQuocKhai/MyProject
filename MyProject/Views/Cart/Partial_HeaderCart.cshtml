@@ -1,0 +1,103 @@
+﻿@model List<MyProject.Models.CartModel>
+<div class="cart dropdown show">
+        <a href="/gio-hang" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle" title="Giỏ hàng của bạn có @Model.Count sản phẩm">
+            <i class="icon-cart"></i>
+            <div class="cart-no">@Model.Count</div>
+        </a>
+    </div>
+
+<!--Css cart-->
+@*<style>
+    .add-to-cart-success {
+        cursor: default;
+        display: none;
+        position: absolute;
+        background: #fff;
+        -webkit-box-shadow: 1px 1px 15px #b3b3b3;
+        box-shadow: 1px 1px 15px #b3b3b3;
+        right: 15px;
+        padding: 15px 20px;
+        z-index: 9999;
+        top: calc(100% + 15px);
+        border-radius: 6px;
+    }
+
+        .add-to-cart-success:after {
+            content: "";
+            position: absolute;
+            width: 11px;
+            height: 11px;
+            top: -4px;
+            right: 15px;
+            -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+            background: #fff;
+            -webkit-box-shadow: -1px -1px 0 #dfdfdf;
+            box-shadow: -1px -1px 0 #dfdfdf;
+            z-index: -1;
+        }
+
+    .item.header-cart {
+        display: inline-block;
+        border: 2px solid #9055A2;
+        padding: 8px 11px 8px 38px;
+        border-radius: 4px;
+        margin-left: 0;
+        letter-spacing: .7px;
+        font-weight: 400;
+        font-size: 13px;
+        text-decoration:none;
+        vertical-align: middle;
+    }
+
+        .item.header-cart span.cart-count {
+            color: #4a4a4a;
+            background: #fdd835;
+            height: 20px;
+            border-radius: 2px;
+            display: inline-block;
+            text-align: center;
+            line-height: 20px;
+            margin-left: 9px;
+            font-size: 12px;
+            padding: 0 6px;
+            font-weight: 700;
+        }
+
+        .item.header-cart .icon-cart {
+            font-size: 18px;
+            left: 25px;
+            top: 14px;
+            position: absolute;
+        }
+
+    .fa.fa-times-circle {
+        background-position: -116px -409px;
+    }
+
+    .btn.pay {
+        background-color: #ff3945;
+        color: #fff;
+        width: 252px;
+        margin-top: 12px;
+        border-radius: 5px;
+    }
+</style>
+<div class="cart dropdown show nav-link">
+    <div id="header-cart">
+        <a data-reactroot="" rel="nofollow" href="/gio-hang" class="header-cart item">
+            <i class="icon-cart"></i>Giỏ hàng<span class="cart-count">@Model.Count</span>
+        </a>
+        <div class="add-to-cart-success" style="display: block;">
+            <span class="close">
+                <i class="fa fa-times-circle"></i>
+            </span><p class="text">
+                <i class="fa fa-check-circle" style="color: #28a745;"></i>
+                <!-- react-text: 10 -->Thêm vào giỏ hàng thành công!<!-- /react-text -->
+            </p>
+            <a href="/gio-hang" class="btn pay">Xem giỏ hàng và thanh toán</a>
+        </div>
+    </div>
+</div>*@
+
+

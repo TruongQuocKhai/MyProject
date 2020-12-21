@@ -1,0 +1,33 @@
+﻿@{ 
+    var listHotProducts = (List<CommonModels.EF.Product>)ViewBag.ListHotProducts;
+}
+<section class="women-collection">
+    <div class="container">
+        <header class="text-center">
+            <h2 class="text-uppercase">Sản phẩm khuyến mãi</h2>
+        </header>
+        <!-- Products Slider-->
+        <div class="owl-carousel owl-theme products-slider">
+            <!-- item-->
+            @foreach (var item in listHotProducts)
+            {
+                <div class="item">
+                    <div class="product is-gray">
+                        <div class="image d-flex align-items-center justify-content-center">
+                            <img src="@item.Image" alt="product" class="img-fluid">
+                            <div class="hover-overlay d-flex align-items-center justify-content-center">
+                                <div class="CTA d-flex align-items-center justify-content-center"><a href="/them-vao-gio-hang?productId=@item.ID&quantity=1" class="add-to-cart"><i class="fa fa-shopping-cart"></i></a><a href="/chi-tiet/@item.MetaTitle-@item.ID" class="visit-product active"><i class="icon-search"></i>Chi tiết</a><a href="#" data-toggle="modal" data-target="#@item.ID" class="quick-view"><i class="fa fa-arrows-alt"></i></a></div>
+                            </div>
+                        </div>
+                        <div class="title">
+                            <a href="/chi-tiet/@item.MetaTitle-@item.ID">
+                                <h3 class="h4 no-margin-bottom">@item.Name</h3>
+                            </a><span class="price text-muted">@item.Price.GetValueOrDefault().ToString("N0")<sup>đ</sup></span>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+

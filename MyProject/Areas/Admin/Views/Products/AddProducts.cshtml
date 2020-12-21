@@ -1,0 +1,122 @@
+﻿@*@model List<CommonModels.EF.Product>*@
+@model CommonModels.EF.Product
+
+
+@{
+    ViewBag.Title = "AddProducts";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@section header {
+    Thêm sản phẩm
+}
+@section jsFooter{
+    <script src="~/Areas/Admin/Contents/js/ckfinder/config.js"></script>
+    <script src="~/Areas/Admin/Contents/js/ckeditor/ckeditor.js"></script>
+    <script>
+        $('#btnSelectImage').on('click', function (e) {
+            e.preventDefault();
+            var finder = new CKFinder();
+            finder.selectActionFunction = function (url) {
+                $('#txtImage').val(url);
+            };
+            finder.popup();
+        });
+    </script>
+}
+<div class="single-product-tab-area mg-b-30">
+    <!-- Single pro tab review Start-->
+    <div class="single-pro-review-area">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="review-tab-pro-inner">
+                        <ul id="myTab3" class="tab-review-design">
+                            <li class="active"><a href="#inforProducts"><i class="icon nalika-edit" aria-hidden="true"></i> Thông tin sản phẩm</a></li>
+                        </ul>
+                        <form action="@Url.Action("AddProducts","Products")" method="post">
+                            <div id="myTabContent" class="tab-content custom-product-edit">
+                                <div class="product-tab-list tab-pane fade active in">
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                            <div class="review-content-section">
+                                                <div class="input-group mg-b-pro-edt">
+                                                    <span class="input-group-addon"><i class="fa fa-barcode"></i></span>
+                                                    <input type="text" class="form-control" name="Code" placeholder="Mã sản phẩm">
+                                                </div>
+                                                <div class="input-group mg-b-pro-edt">
+                                                    <span class="input-group-addon"><i class="icon nalika-user" aria-hidden="true"></i></span>
+                                                    <input type="text" class="form-control" name="Name" placeholder="Tên sản phẩm">
+                                                </div>
+                                                <div class="input-group mg-b-pro-edt">
+                                                    <span class="input-group-addon"><i class="icon nalika-edit" aria-hidden="true"></i></span>
+                                                    <input type="text" class="form-control" name="MetaTitle" placeholder="Alias">
+                                                </div>
+                                                <div class="input-group mg-b-pro-edt">
+                                                    <span class="input-group-addon"><i class="icon nalika-new-file" aria-hidden="true"></i></span>
+                                                    <textarea type="" class="form-control" name="Description" placeholder="Mô tả cho sản phẩm"></textarea>
+                                                </div>
+                                                <div class="input-group mg-b-pro-edt">
+                                                    <span class="input-group-addon"><i class="fa fa-usd" aria-hidden="true"></i></span>
+                                                    <input type="text" class="form-control" name="Price" placeholder="Giá bán">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                            <div class="review-content-section">
+                                                <div class="input-group mg-b-pro-edt">
+                                                    <span class="input-group-addon"><i class="icon nalika-user" aria-hidden="true"></i></span>
+                                                    <input type="text" class="form-control" name="Quantity" placeholder="Số lượng">
+                                                </div>
+
+                                                <div class="input-group mg-b-pro-edt">
+                                                    <span class="input-group-addon"><i class="icon nalika-like" aria-hidden="true"></i></span>
+                                                    @Html.DropDownList("CategoryID", null, new { @class = "form-control" })
+                                                </div>
+
+                                                <div class="col-lg-4" style="padding-left:0;">
+                                                    <div class="pro-edt-img">
+                                                        <img src="~/ImageData/5-small.jpg" />
+                                                    </div>
+                                                </div>
+                                                <div class="input-group mg-b-pro-edt">
+                                                    <span class="input-group-addon"><i class="fa fa-image"></i> </span>
+                                                    @*<input name="Image" id="txtImage " class="form-control"  />*@
+                                                    @Html.TextBoxFor(model => model.Image, new { @class = "form-control", @readonly = "readonly", @placeholder = "Bấm chọn ảnh...", @id = "txtImage", @style="color:black;"})
+                                                </div>
+                                                <div class="custom-pro-edt-ds">
+                                                    <a class="btn btn-ctl-bt" id="btnSelectImage">
+                                                        Chọn ảnh <i class="fa fa-check"></i>
+                                                    </a>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <div class="text-center custom-pro-edt-ds">
+                                                <button type="submit" class="btn btn-ctl-bt waves-effect waves-light m-r-10">
+                                                    Thêm mới
+                                                </button>
+                                                <button type="submit" class="btn btn-ctl-bt waves-effect waves-light">
+                                                    Hủy bỏ
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+

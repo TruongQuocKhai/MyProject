@@ -1,0 +1,8 @@
+﻿@model List<CommonModels.EF.ContentCategory>
+<ul class="breadcrumb justify-content-lg-end" style="margin-left:18px;">
+    @foreach (var item in Model)
+    {
+        <li class="breadcrumb-item"><a href="/Feed/@item.MetaTitle">@item.Name</a></li>
+        @*<li class="breadcrumb-item"><a href="~/tin-tuc/@item.Name-@item.Id">@item.Name</a></li>*@
+    }
+</ul>

@@ -1,0 +1,12 @@
+D:\MyProject\Common\bin\Debug\Common.dll
+D:\MyProject\Common\bin\Debug\Common.pdb
+D:\MyProject\Common\obj\Debug\CommonL.csproj.CoreCompileInputs.cache
+D:\MyProject\Common\obj\Debug\Common.dll
+D:\MyProject\Common\obj\Debug\Common.pdb
+D:\MyProject\Common\obj\Debug\CommonL.csprojAssemblyReference.cache
+D:\Personal Projects\MyProject\Common\bin\Debug\Common.dll
+D:\Personal Projects\MyProject\Common\bin\Debug\Common.pdb
+D:\Personal Projects\MyProject\Common\obj\Debug\CommonL.csprojAssemblyReference.cache
+D:\Personal Projects\MyProject\Common\obj\Debug\CommonL.csproj.CoreCompileInputs.cache
+D:\Personal Projects\MyProject\Common\obj\Debug\Common.dll
+D:\Personal Projects\MyProject\Common\obj\Debug\Common.pdb

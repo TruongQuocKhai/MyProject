@@ -1,0 +1,189 @@
+D:\MyProject\MyProject\bin\MyProject.dll.config
+D:\MyProject\MyProject\bin\MyProject.dll
+D:\MyProject\MyProject\bin\MyProject.pdb
+D:\MyProject\MyProject\bin\roslyn\csc.exe
+D:\MyProject\MyProject\bin\roslyn\csc.exe.config
+D:\MyProject\MyProject\bin\roslyn\csc.rsp
+D:\MyProject\MyProject\bin\roslyn\csi.exe
+D:\MyProject\MyProject\bin\roslyn\csi.exe.config
+D:\MyProject\MyProject\bin\roslyn\csi.rsp
+D:\MyProject\MyProject\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\MyProject\MyProject\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\MyProject\MyProject\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\MyProject\MyProject\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\MyProject\MyProject\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\MyProject\MyProject\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\MyProject\MyProject\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\MyProject\MyProject\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\MyProject\MyProject\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\MyProject\MyProject\bin\roslyn\Microsoft.Managed.Core.targets
+D:\MyProject\MyProject\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\MyProject\MyProject\bin\roslyn\System.AppContext.dll
+D:\MyProject\MyProject\bin\roslyn\System.Collections.Immutable.dll
+D:\MyProject\MyProject\bin\roslyn\System.Console.dll
+D:\MyProject\MyProject\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\MyProject\MyProject\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\MyProject\MyProject\bin\roslyn\System.IO.Compression.dll
+D:\MyProject\MyProject\bin\roslyn\System.IO.FileSystem.dll
+D:\MyProject\MyProject\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\MyProject\MyProject\bin\roslyn\System.IO.Pipes.AccessControl.dll
+D:\MyProject\MyProject\bin\roslyn\System.IO.Pipes.dll
+D:\MyProject\MyProject\bin\roslyn\System.Reflection.Metadata.dll
+D:\MyProject\MyProject\bin\roslyn\System.Security.AccessControl.dll
+D:\MyProject\MyProject\bin\roslyn\System.Security.Claims.dll
+D:\MyProject\MyProject\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\MyProject\MyProject\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\MyProject\MyProject\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\MyProject\MyProject\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\MyProject\MyProject\bin\roslyn\System.Security.Principal.Windows.dll
+D:\MyProject\MyProject\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\MyProject\MyProject\bin\roslyn\System.ValueTuple.dll
+D:\MyProject\MyProject\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\MyProject\MyProject\bin\roslyn\System.Xml.XmlDocument.dll
+D:\MyProject\MyProject\bin\roslyn\System.Xml.XPath.dll
+D:\MyProject\MyProject\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\MyProject\MyProject\bin\roslyn\vbc.exe
+D:\MyProject\MyProject\bin\roslyn\vbc.exe.config
+D:\MyProject\MyProject\bin\roslyn\vbc.rsp
+D:\MyProject\MyProject\bin\roslyn\VBCSCompiler.exe
+D:\MyProject\MyProject\bin\roslyn\VBCSCompiler.exe.config
+D:\MyProject\MyProject\bin\Antlr3.Runtime.dll
+D:\MyProject\MyProject\bin\CKFinder.dll
+D:\MyProject\MyProject\bin\Common.dll
+D:\MyProject\MyProject\bin\CommonModels.dll
+D:\MyProject\MyProject\bin\EntityFramework.dll
+D:\MyProject\MyProject\bin\EntityFramework.SqlServer.dll
+D:\MyProject\MyProject\bin\log4net.dll
+D:\MyProject\MyProject\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\MyProject\MyProject\bin\Microsoft.Web.Infrastructure.dll
+D:\MyProject\MyProject\bin\Newtonsoft.Json.dll
+D:\MyProject\MyProject\bin\PagedList.dll
+D:\MyProject\MyProject\bin\PagedList.Mvc.dll
+D:\MyProject\MyProject\bin\PayPal.dll
+D:\MyProject\MyProject\bin\System.Web.Helpers.dll
+D:\MyProject\MyProject\bin\System.Web.Mvc.dll
+D:\MyProject\MyProject\bin\System.Web.Optimization.dll
+D:\MyProject\MyProject\bin\System.Web.Razor.dll
+D:\MyProject\MyProject\bin\System.Web.WebPages.Deployment.dll
+D:\MyProject\MyProject\bin\System.Web.WebPages.dll
+D:\MyProject\MyProject\bin\System.Web.WebPages.Razor.dll
+D:\MyProject\MyProject\bin\WebGrease.dll
+D:\MyProject\MyProject\bin\CommonModels.pdb
+D:\MyProject\MyProject\bin\CommonModels.dll.config
+D:\MyProject\MyProject\bin\Common.pdb
+D:\MyProject\MyProject\bin\CKFinder.pdb
+D:\MyProject\MyProject\bin\EntityFramework.xml
+D:\MyProject\MyProject\bin\EntityFramework.SqlServer.xml
+D:\MyProject\MyProject\bin\log4net.xml
+D:\MyProject\MyProject\bin\PagedList.xml
+D:\MyProject\MyProject\bin\PagedList.Mvc.xml
+D:\MyProject\MyProject\bin\PayPal.xml
+D:\MyProject\MyProject\bin\System.Web.Helpers.xml
+D:\MyProject\MyProject\bin\System.Web.Mvc.xml
+D:\MyProject\MyProject\bin\System.Web.Optimization.xml
+D:\MyProject\MyProject\bin\System.Web.Razor.xml
+D:\MyProject\MyProject\bin\System.Web.WebPages.xml
+D:\MyProject\MyProject\bin\System.Web.WebPages.Deployment.xml
+D:\MyProject\MyProject\bin\System.Web.WebPages.Razor.xml
+D:\MyProject\MyProject\bin\Newtonsoft.Json.xml
+D:\MyProject\MyProject\bin\Antlr3.Runtime.pdb
+D:\MyProject\MyProject\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\MyProject\MyProject\obj\Debug\MyProject.csprojAssemblyReference.cache
+D:\MyProject\MyProject\obj\Debug\MyProject.csproj.CoreCompileInputs.cache
+D:\MyProject\MyProject\obj\Debug\MyProject.csproj.CopyComplete
+D:\MyProject\MyProject\obj\Debug\MyProject.dll
+D:\MyProject\MyProject\obj\Debug\MyProject.pdb
+D:\Personal Projects\MyProject\MyProject\bin\MyProject.dll.config
+D:\Personal Projects\MyProject\MyProject\bin\MyProject.dll
+D:\Personal Projects\MyProject\MyProject\bin\MyProject.pdb
+D:\Personal Projects\MyProject\MyProject\bin\roslyn\csc.exe
+D:\Personal Projects\MyProject\MyProject\bin\roslyn\csc.exe.config
+D:\Personal Projects\MyProject\MyProject\bin\roslyn\csc.rsp
+D:\Personal Projects\MyProject\MyProject\bin\roslyn\csi.exe
+D:\Personal Projects\MyProject\MyProject\bin\roslyn\csi.exe.config
+D:\Personal Projects\MyProject\MyProject\bin\roslyn\csi.rsp
+D:\Personal Projects\MyProject\MyProject\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Personal Projects\MyProject\MyProject\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Personal Projects\MyProject\MyProject\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\Personal Projects\MyProject\MyProject\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Personal Projects\MyProject\MyProject\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\Personal Projects\MyProject\MyProject\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Personal Projects\MyProject\MyProject\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Personal Projects\MyProject\MyProject\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\Personal Projects\MyProject\MyProject\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\Personal Projects\MyProject\MyProject\bin\roslyn\Microsoft.Managed.Core.targets
+D:\Personal Projects\MyProject\MyProject\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Personal Projects\MyProject\MyProject\bin\roslyn\System.AppContext.dll
+D:\Personal Projects\MyProject\MyProject\bin\roslyn\System.Collections.Immutable.dll
+D:\Personal Projects\MyProject\MyProject\bin\roslyn\System.Console.dll
+D:\Personal Projects\MyProject\MyProject\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\Personal Projects\MyProject\MyProject\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\Personal Projects\MyProject\MyProject\bin\roslyn\System.IO.Compression.dll
+D:\Personal Projects\MyProject\MyProject\bin\roslyn\System.IO.FileSystem.dll
+D:\Personal Projects\MyProject\MyProject\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\Personal Projects\MyProject\MyProject\bin\roslyn\System.IO.Pipes.AccessControl.dll
+D:\Personal Projects\MyProject\MyProject\bin\roslyn\System.IO.Pipes.dll
+D:\Personal Projects\MyProject\MyProject\bin\roslyn\System.Reflection.Metadata.dll
+D:\Personal Projects\MyProject\MyProject\bin\roslyn\System.Security.AccessControl.dll
+D:\Personal Projects\MyProject\MyProject\bin\roslyn\System.Security.Claims.dll
+D:\Personal Projects\MyProject\MyProject\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\Personal Projects\MyProject\MyProject\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\Personal Projects\MyProject\MyProject\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\Personal Projects\MyProject\MyProject\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\Personal Projects\MyProject\MyProject\bin\roslyn\System.Security.Principal.Windows.dll
+D:\Personal Projects\MyProject\MyProject\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\Personal Projects\MyProject\MyProject\bin\roslyn\System.ValueTuple.dll
+D:\Personal Projects\MyProject\MyProject\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\Personal Projects\MyProject\MyProject\bin\roslyn\System.Xml.XmlDocument.dll
+D:\Personal Projects\MyProject\MyProject\bin\roslyn\System.Xml.XPath.dll
+D:\Personal Projects\MyProject\MyProject\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\Personal Projects\MyProject\MyProject\bin\roslyn\vbc.exe
+D:\Personal Projects\MyProject\MyProject\bin\roslyn\vbc.exe.config
+D:\Personal Projects\MyProject\MyProject\bin\roslyn\vbc.rsp
+D:\Personal Projects\MyProject\MyProject\bin\roslyn\VBCSCompiler.exe
+D:\Personal Projects\MyProject\MyProject\bin\roslyn\VBCSCompiler.exe.config
+D:\Personal Projects\MyProject\MyProject\bin\Antlr3.Runtime.dll
+D:\Personal Projects\MyProject\MyProject\bin\Common.dll
+D:\Personal Projects\MyProject\MyProject\bin\CommonModels.dll
+D:\Personal Projects\MyProject\MyProject\bin\EntityFramework.dll
+D:\Personal Projects\MyProject\MyProject\bin\EntityFramework.SqlServer.dll
+D:\Personal Projects\MyProject\MyProject\bin\log4net.dll
+D:\Personal Projects\MyProject\MyProject\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Personal Projects\MyProject\MyProject\bin\Microsoft.Web.Infrastructure.dll
+D:\Personal Projects\MyProject\MyProject\bin\Newtonsoft.Json.dll
+D:\Personal Projects\MyProject\MyProject\bin\PagedList.dll
+D:\Personal Projects\MyProject\MyProject\bin\PagedList.Mvc.dll
+D:\Personal Projects\MyProject\MyProject\bin\PayPal.dll
+D:\Personal Projects\MyProject\MyProject\bin\System.Web.Helpers.dll
+D:\Personal Projects\MyProject\MyProject\bin\System.Web.Mvc.dll
+D:\Personal Projects\MyProject\MyProject\bin\System.Web.Optimization.dll
+D:\Personal Projects\MyProject\MyProject\bin\System.Web.Razor.dll
+D:\Personal Projects\MyProject\MyProject\bin\System.Web.WebPages.Deployment.dll
+D:\Personal Projects\MyProject\MyProject\bin\System.Web.WebPages.dll
+D:\Personal Projects\MyProject\MyProject\bin\System.Web.WebPages.Razor.dll
+D:\Personal Projects\MyProject\MyProject\bin\WebGrease.dll
+D:\Personal Projects\MyProject\MyProject\bin\CommonModels.pdb
+D:\Personal Projects\MyProject\MyProject\bin\CommonModels.dll.config
+D:\Personal Projects\MyProject\MyProject\bin\Common.pdb
+D:\Personal Projects\MyProject\MyProject\bin\CKFinder.pdb
+D:\Personal Projects\MyProject\MyProject\bin\EntityFramework.xml
+D:\Personal Projects\MyProject\MyProject\bin\EntityFramework.SqlServer.xml
+D:\Personal Projects\MyProject\MyProject\bin\log4net.xml
+D:\Personal Projects\MyProject\MyProject\bin\PagedList.xml
+D:\Personal Projects\MyProject\MyProject\bin\PagedList.Mvc.xml
+D:\Personal Projects\MyProject\MyProject\bin\PayPal.xml
+D:\Personal Projects\MyProject\MyProject\bin\System.Web.Helpers.xml
+D:\Personal Projects\MyProject\MyProject\bin\System.Web.Mvc.xml
+D:\Personal Projects\MyProject\MyProject\bin\System.Web.Optimization.xml
+D:\Personal Projects\MyProject\MyProject\bin\System.Web.Razor.xml
+D:\Personal Projects\MyProject\MyProject\bin\System.Web.WebPages.xml
+D:\Personal Projects\MyProject\MyProject\bin\System.Web.WebPages.Deployment.xml
+D:\Personal Projects\MyProject\MyProject\bin\System.Web.WebPages.Razor.xml
+D:\Personal Projects\MyProject\MyProject\bin\Newtonsoft.Json.xml
+D:\Personal Projects\MyProject\MyProject\bin\Antlr3.Runtime.pdb
+D:\Personal Projects\MyProject\MyProject\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Personal Projects\MyProject\MyProject\obj\Debug\MyProject.csprojAssemblyReference.cache
+D:\Personal Projects\MyProject\MyProject\obj\Debug\MyProject.csproj.CoreCompileInputs.cache
+D:\Personal Projects\MyProject\MyProject\obj\Debug\MyProject.csproj.CopyComplete
+D:\Personal Projects\MyProject\MyProject\obj\Debug\MyProject.dll
+D:\Personal Projects\MyProject\MyProject\obj\Debug\MyProject.pdb

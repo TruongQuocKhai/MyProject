@@ -1,0 +1,102 @@
+﻿@model MyProject.Areas.Admin.Models.UserModel
+
+@{
+    ViewBag.Title = "AddUser";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+@section header{
+    Thêm mới User
+}
+
+@section jsFooter {
+    <script src="~/Contents/js/show-hide-password.js"></script>
+}
+<style>
+    .field-icon {
+        float: right;
+        margin-left: -25px;
+        margin-top: 13px;
+        position: relative;
+        z-index: 2;
+        color: #fff;
+    }
+</style>
+
+<div class="single-product-tab-area mg-b-30">
+    <!-- Single pro tab review Start-->
+    <div class="single-pro-review-area">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="review-tab-pro-inner">
+                        <ul id="myTab3" class="tab-review-design">
+                            <li class="active"><a href="#inforProducts"><i class="icon nalika-edit" aria-hidden="true"></i> Thông tin User</a></li>
+                        </ul>
+                        <form action="@Url.Action("AddUser","User")" method="post">
+                            <div id="myTabContent" class="tab-content custom-product-edit">
+                                <div class="product-tab-list tab-pane fade active in">
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                            <div class="review-content-section">
+                                                @*<div class="input-group mg-b-pro-edt">
+                                                    <span class="input-group-addon"><i class="fa fa-barcode"></i></span>
+                                                    <input type="text" class="form-control" name="UserName" placeholder="Nhâp tên đăng nhập">
+                                                    @Html.ValidationMessage("UserName", new { @class = "text-danger" })
+                                                </div>*@
+                                                <div class="input-group mg-b-pro-edt">
+                                                    <span class="input-group-addon"><i class="icon nalika-user" aria-hidden="true"></i></span>
+                                                    <input type="text" class="form-control" name="Name" placeholder="Nhập họ tên">
+                                                    @Html.ValidationMessage("Name", new { @class = "text-danger" })
+                                                </div>
+                                                <div class="input-group mg-b-pro-edt">
+                                                    <span class="input-group-addon"><i class="icon nalika-edit" aria-hidden="true"></i></span>
+                                                    <input id="password-field" name="Password" type="password" class="form-control" value="" placeholder="Nhập mật khẩu" style="position:initial">
+                                                    <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                                                    @Html.ValidationMessage("Password", new { @class = "text-danger" })
+                                                </div>
+                                                <div class="input-group mg-b-pro-edt">
+                                                    <span class="input-group-addon"><i class="icon nalika-new-file" aria-hidden="true"></i></span>
+                                                    <input name="phone" type="tel" maxlength="11" spellcheck="false" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" class="form-control" placeholder="Nhập số điện thoại">
+                                                    @Html.ValidationMessage("Phone", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                            <div class="review-content-section">
+                                                <div class="input-group mg-b-pro-edt">
+                                                    <span class="input-group-addon"><i class="fa fa-usd" aria-hidden="true"></i></span>
+                                                    <input type="email" class="form-control" name="Email" placeholder="Nhập email">
+                                                    @Html.ValidationMessage("Email", new { @class = "text-danger" })
+                                                </div>
+                                                <div class="input-group mg-b-pro-edt">
+                                                    <span class="input-group-addon"><i class="fa fa-usd" aria-hidden="true"></i></span>
+                                                    <input type="text" class="form-control" name="Address" placeholder="Nhập địa chỉ">
+                                                </div>
+                                                @*<div class="input-group mg-b-pro-edt">
+                                                    <span class="input-group-addon" >Trạng thái</span>
+                                                    @Html.CheckBoxFor(model=>model.Status, new { @class = "form-control", @style = "width:30px; height:30px; margin-left:10px;" })
+                                                    <input type="checkbox" class="form-control" name="Status" value="" style="width:30px; height:30px; margin-left:10px;">
+                                                </div>*@
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <div class="text-center custom-pro-edt-ds">
+                                                <button type="submit" class="btn btn-ctl-bt waves-effect waves-light m-r-10">
+                                                    Thêm mới
+                                                </button>
+                                                
+                                                <a href="/Admin/User/Index" class="btn btn-ctl-bt waves-effect waves-light">Hủy bỏ</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

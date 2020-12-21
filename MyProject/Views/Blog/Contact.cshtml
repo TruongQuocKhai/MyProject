@@ -1,0 +1,86 @@
+﻿
+@{
+    ViewBag.Title = "Contact";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<div id="heading-breadcrumbs">
+    <div class="container">
+        <div class="row d-flex align-items-center flex-wrap">
+            <div class="col-md-7">
+            </div>
+            <div class="col-md-5">
+                <ul class="breadcrumb d-flex justify-content-end">
+                    <li class="breadcrumb-item"><a href="/">Trang Chủ</a></li>
+                    <li class="breadcrumb-item active">Liên Hệ</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 p-b-30">
+                <div class="p-r-20 p-r-0-lg">
+                    <div class="contact-map size21" id="google_map" data-map-x="40.614439" data-map-y="-73.926781" data-pin="images/icons/icon-position-map.png" data-scrollwhell="0" data-draggable="1">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.6870762601925!2d106.80333331744384!3d10.835242000000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317527257904fa17%3A0xa27eb98be2cffc1c!2zVmnhu4duIEPDtG5nIE5naOG7hyBDYW8gSHV0ZWNo!5e0!3m2!1svi!2s!4v1536128310367" width="100%" height="503" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 p-b-30">
+                <header class="mb-5">
+                    <h2 class="heading-line">Contact</h2>
+                </header>
+                <div class="row">
+                    <div class="col-md-12">
+                        @using (Html.BeginForm())
+                        {
+                            @Html.AntiForgeryToken()
+
+                            <form class="custom-form form">
+                                <div class="controls">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label for="name" class="form-label">Họ và Tên</label>
+                                                <input type="text" name="FromName" id="FromName" placeholder="Nhập Tên" required="required" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label for="surname" class="form-label">Số Điện Thoại</label>
+                                                <input type="text" name="NumberPhone" id="NumberPhone" placeholder="Nhập SĐT" required="required" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label for="email" class="form-label">Email</label>
+                                                <input type="email" name="FromEmail" id="FromEmail" placeholder="Nhập Email" required="required" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label for="email" class="form-label">Tiêu Đề</label>
+                                                <input type="text" name="Subject" id="Subject" placeholder="Nhập Tiêu Đề" required="required" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="message" class="form-label">Tin Nhắn</label>
+                                        <textarea rows="4" name="Message" id="Message" placeholder="Nhập tin nhắn" required="required" class="form-control"></textarea>
+                                    </div>
+                                    <button type="submit" class="btn btn-template">Gửi Liên Hệ</button>
+                                </div>
+                            </form>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

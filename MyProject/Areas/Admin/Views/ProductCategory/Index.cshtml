@@ -1,0 +1,418 @@
+﻿@model IEnumerable<CommonModels.EF.ProductCategory>
+@using CommonModels.EF;
+@{
+    ViewBag.Title = "List of products";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+@section jsFooter{
+    <script>
+        function Remove(id) {
+            var conf = confirm("Bạn xác nhận muốn xóa! Sau khi xóa dữ liệu sẽ không được phục hồi");
+            if (conf == true) {
+                $.ajax({
+                    url: '/Admin/Products/Delete',
+                    type: 'POST',
+                    data: {
+                        'id': id
+                    }
+                }).done(function (data) {
+                    if (data.message == 1) {
+                        alert("Xóa thành công");
+                        location.reload();
+                    }
+                    else {
+                        alert("Xóa thất bại");
+                    }
+                })
+            }
+        }
+    </script>
+}
+<style>
+    .btn-outline.red:hover {
+        border-color: #e7505a;
+        color: #fff;
+        background: #e7505a;
+    }
+
+
+    .btn-outline.red {
+        border-color: #e7505a;
+        color: #e7505a;
+        background: 0 0;
+        /*border-radius: 20px;*/
+        width: 27%;
+    }
+
+        .btn-outline.red:active {
+            position: relative;
+            top: 2px;
+        }
+
+    .btn-outline.blue:hover {
+        background-color: #5bc0de;
+        border-color: #46b8da;
+        color: #fff;
+    }
+
+    .btn-outline.blue {
+        border-color: #17a2b8;
+        color: #17a2b8;
+        background: 0 0;
+        /*border-radius: 20px;*/
+        width: 27%;
+    }
+
+        .btn-outline.blue:active {
+            position: relative;
+            top: 2px;
+        }
+</style>
+
+@section header{
+    Danh mục sản phẩm
+}
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    @ViewBag.Success
+</div>
+<div class="product-status mg-b-30">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="product-status-wrap">
+                    @*<h4>Products List</h4>*@
+                    <div class="add-product">
+                        <a data-toggle="modal" data-target="#exampleModal" class="btn btn-warning">Thêm mới</a>
+
+                    </div>
+                    <table>
+                        <tr>
+                            <th>Tên danh mục</th>
+                            <th>Alias </th>
+                            <th>Vị trí hiển thị</th>
+                            <th>Trạng thái</th>
+                            <th>Thao tác</th>
+                        </tr>
+                        @foreach (var item in Model)
+                        {
+                            <tr id="@item.ID">
+                                <td>@item.Name</td>
+                                <td>@item.MetaTitle</td>
+                                <td>@item.DisplayOrder</td>
+                                <td>
+                                    @if (item.Status == true)
+                                    {
+                                        <button class="pd-setting">Hiển thị</button>
+                                    }
+                                    else
+                                    {
+                                        <button class="ds-setting">Đã gỡ</button>
+                                    }
+
+                                </td>
+
+                                <td>
+                                    <button data-toggle="modal" data-target="#exampleModal1" onclick="Get(@item.ID)" class="btn btn-info">Sửa</button>
+                                    @{
+                                        MyProjectDb db = new MyProjectDb();
+                                        var query = (from a in db.Products join b in db.ProductCategories on a.CategoryID equals b.ID where b.ID == item.ID select b).FirstOrDefault();
+                                        if (query != null)
+                                        {
+                                            <button disabled class="btn btn-danger">Xóa</button>
+                                        }
+                                        else
+                                        {
+                                            <button onclick="Xoa(@item.ID)" class="btn btn-danger">Xóa</button>
+                                        }
+                                    }
+                                </td>
+
+                                @*<td>
+                                        <a href="/Admin/Products/EditProducts/@item.ID"><i class="fa fa-pencil-square-o btn btn-icon-only btn-circle btn-outline blue"></i></a>
+                                        <a onclick="Remove(@item.ID)"><i class="fa fa-trash btn btn-icon-only btn-circle btn-outline red"></i></a>
+                                    </td>*@
+                            </tr>
+                        }
+                    </table>
+                    @if (ViewBag.TotalPage >= 1)
+                    {
+                        var pageDisplay = (int)ViewBag.MaxPage;
+                        var totalPage = (int)ViewBag.TotalPage;
+                        var currentPage = ((int)ViewBag.Page);
+
+                        // Create numberic link
+                        var startPageIndex = Math.Max(1, currentPage - pageDisplay / 2);
+                        var endPageIndex = Math.Min(totalPage, currentPage + pageDisplay / 2);
+
+                        var link = "/Admin/ProductCategory/Index";
+
+                        <div class="custom-pagination">
+                            <ul class="pagination">
+                                <li class="page-item"><a class="page-link" href="@link?page=@ViewBag.First">Previous</a></li>
+                                @for (int i = startPageIndex; i <= endPageIndex; i++)
+                                {
+                                    if (currentPage == i)
+                                    {
+                                        <li class="page-item"><a class="page-link active" href="@link?page=@i">@i</a></li>
+                                    }
+                                    else
+                                    {
+                                        <li class="page-item"><a class="page-link " href="@link?page=@i">@i</a></li>
+                                    }
+                                }
+                                <li class="page-item"><a class="page-link" href="@link?page=@ViewBag.Last">Next</a></li>
+                            </ul>
+                        </div>
+                    }
+                    else { }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal thêm mới -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="exampleModalLabel">Thêm mới danh mục sản phẩm</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <div class="col-sm-3 ">
+                                <label class="label label-default">Tên danh mục</label>
+                            </div>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="productCategory" placeholder="Nhập tên danh mục..." />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-3 ">
+                                <label style="" class="label label-default">Meta-Title</label>
+                            </div>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="meta-title" placeholder="Nhập tên Meta title..." />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-3">
+                                <label style="" class="label label-default">Số thứ tự hiển thị</label>
+                            </div>
+                            <div class="col-sm-8">
+                                <input type="number" class="form-control" id="display" placeholder="Nhập số thứ tự hiển thị..." />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-3 ">
+                                <label style="" class="label label-default">Trạng thái</label>
+                            </div>
+                            <div class="col-sm-8">
+                                <input type="checkbox" id="status" />
+                            </div>
+                        </div>
+                        @*<div class="form-group">
+                                <div class="col-sm-3">
+                                    <label style="" class="label label-default">Show on home</label>
+                                </div>
+                                <div class="col-sm-8">
+                                    <input type="checkbox" id="show-on-home" />
+                                </div>
+                            </div>*@
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
+                <button type="button" onclick="ThemMoi()" class="btn btn-primary">Thêm mới</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal cập nhật  -->
+<div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="exampleModalLabel">Cập nhật danh mục sản phẩm</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <div class="col-sm-3">
+                                <label style="" class="label label-default">Tên danh mục</label>
+                            </div>
+                            <div class="col-sm-8">
+                                <input type="text" id="IdCategory" hidden="hidden" />
+                                <input type="text" class="form-control" id="productCategory1" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-3">
+                                <label style="" class="label label-default">Meta-Title</label>
+                            </div>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="meta-title1" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-3">
+                                <label style="" class="label label-default">Số thứ tự hiển thị</label>
+                            </div>
+                            <div class="col-sm-8">
+                                <input type="number" class="form-control" id="display1" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-3">
+                                <label style="" class="label label-default">Trạng thái</label>
+                            </div>
+                            <div class="col-sm-8">
+                                <input type="checkbox" id="status1" />
+                            </div>
+                        </div>
+                        @*<div class="form-group">
+                                <div class="col-sm-3">
+                                    <label style="" class="label label-default">Show on home</label>
+                                </div>
+                                <div class="col-sm-8">
+                                    <input type="checkbox" id="show-on-home1" />
+                                </div>
+                            </div>*@
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
+                <button type="button" onclick="Sua()" class="btn btn-info">Cập nhập</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function ThemMoi() {
+        var n = $('#productCategory').val();
+        if (n == "") {
+            alert("Không được bỏ trống");
+            $('#productCategory').focus();
+        }
+        else {
+            $.ajax({
+                url: '/Admin/ProductCategory/Create',
+                type: 'POST',
+                data: {
+                    'Name': n,
+                    'Status': $('#status').is(':checked'),
+                    'MetaTitle': $('#meta-title').val(),
+                    'DisplayOrder': $('#display').val(),
+                    'ShowOnHome': $('#show-on-home').is(':checked')
+                }
+            }).done(function (data) {
+                if (data.mess_ == 1) {
+                    alert("Thêm thành công");
+                    location.reload();
+                }
+                else {
+                    alert("Thêm thất bại đã tồn tại tên thể loại");
+                }
+            })
+        }
+    }
+    function Xoa(id) {
+        var xacnhan = confirm("Bạn xác nhận muốn xóa! Sau khi xóa dữ liệu sẽ không được phục hồi");
+        if (xacnhan == true) {
+            $.ajax({
+                url: '/Admin/ProductCategory/Delete',
+                type: 'POST',
+                data: {
+                    'id': id
+                }
+            }).done(function (data) {
+                if (data.mess_ == 1) {
+                    alert("Xóa thành công");
+                    location.reload();
+                }
+                else {
+                    alert("Xóa thất bại");
+                }
+            })
+        }
+        else {
+            alert("Ok :v");
+        }
+    }
+    function Get(id) {
+        $.ajax({
+            url: '/Admin/ProductCategory/Get',
+            type: 'GET',
+            dateType: "json",
+            cache: false,
+            data: {
+                'id': id
+            },
+            success: function (data) {
+                $('#IdCategory').val(data.ID);
+                $('#productCategory1').val(data.Name);
+                $('#meta-title1').val(data.MetaTitle);
+                $('#display1').val(data.DisplayOrder);
+                if (data.ShowOnHome == true) {
+                    $('#show-on-home1').attr('checked', true);
+                }
+                else {
+                    $('#show-on-home1').attr('checked', false);
+                }
+                if (data.Status == true) {
+                    $('#status1').attr('checked', true);
+                }
+                else {
+                    $('#status1').attr('checked', false);
+                }
+            }
+        })
+    }
+    function Sua() {
+        var id = $('#IdCategory').val();
+        var n = $('#productCategory1').val();
+        if (n == "") {
+            alert("Không được bỏ trống");
+            $('#productCategory1').focus();
+        }
+        else {
+            $.ajax({
+                url: '/Admin/ProductCategory/Update',
+                type: 'POST',
+                data: {
+                    'ID': id,
+                    'Name': n,
+                    'Status': $('#status1').is(':checked'),
+                    'MetaTitle': $('#meta-title1').val(),
+                    'DisplayOrder': $('#display1').val(),
+                    'ShowOnHome': $('#show-on-home1').is(':checked')
+
+                }
+            }).done(function (data) {
+                if (data.mess_ == 1) {
+                    alert("Cập nhập thành công");
+                    location.reload();
+                }
+                else {
+                    alert("Cập nhập thất bại");
+                }
+            })
+        }
+    }
+</script>
+
+
+

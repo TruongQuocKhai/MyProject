@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /uploads/
+Disallow: /admin/
+Sitemap: http://localhost:51530/sitemap.xml

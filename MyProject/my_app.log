@@ -1,0 +1,195 @@
+2019-12-13 15:45:56,530       [62] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/x-www-form-urlencoded
+2019-12-13 15:45:56,588       [62] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.9.1 (lang=DOTNET;v=4.5.1;clr=4.0.30319.42000;bit=64;os=Microsoft Windows NT 10.0.18362.0)
+2019-12-13 15:45:56,588       [62] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Basic QVZrOHB1b3d4VTZ2emFJZmhidjI2Z2YyYmxTZnBycVlqcTFXRnBWVFEzM0NSTzRacGN0V3p4MVRVYTFOSzJJUmxtYkNLd0d3OHFVVzNLZEY6RU9RWmItZmRmdlZ0X2I2M0hQRFdzQ2FFMVBSY2tETWZYR0V1WjZuTE1wa3lLOFVXTzUxSVVBcGN0TE5wSTFzRXBnSTRWaFUyUDZKR3FzSmY=
+2019-12-13 15:45:56,589       [62] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:b1fd0567-254e-4b7a-aa5a-4e05b3562ec4
+2019-12-13 15:45:56,614       [62] ERROR PayPal.Api.HttpConnection [(null)] The remote name could not be resolved: 'api.sandbox.paypal.com'
+2019-12-13 15:45:56,619       [62] ERROR PayPal.PayPalException [(null)] Connection Exception: Invalid HTTP response: The remote name could not be resolved: 'api.sandbox.paypal.com'
+PayPal.ConnectionException: Invalid HTTP response: The remote name could not be resolved: 'api.sandbox.paypal.com'
+2019-12-13 16:10:47,080       [55] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/x-www-form-urlencoded
+2019-12-13 16:10:47,081       [55] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.9.1 (lang=DOTNET;v=4.5.1;clr=4.0.30319.42000;bit=64;os=Microsoft Windows NT 10.0.18362.0)
+2019-12-13 16:10:47,081       [55] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Basic QVZrOHB1b3d4VTZ2emFJZmhidjI2Z2YyYmxTZnBycVlqcTFXRnBWVFEzM0NSTzRacGN0V3p4MVRVYTFOSzJJUmxtYkNLd0d3OHFVVzNLZEY6RU9RWmItZmRmdlZ0X2I2M0hQRFdzQ2FFMVBSY2tETWZYR0V1WjZuTE1wa3lLOFVXTzUxSVVBcGN0TE5wSTFzRXBnSTRWaFUyUDZKR3FzSmY=
+2019-12-13 16:10:47,081       [55] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:b7d288fb-94ab-4a50-ae3e-977d995cda43
+2019-12-13 16:10:47,548       [55] DEBUG PayPal.Api.HttpConnection [(null)] grant_type=client_credentials
+2019-12-13 16:10:49,357       [55] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2019-12-13 16:10:49,358       [55] DEBUG PayPal.Api.HttpConnection [(null)] {"scope":"https://uri.paypal.com/services/invoicing https://uri.paypal.com/services/disputes/read-buyer https://uri.paypal.com/services/payments/realtimepayment https://uri.paypal.com/services/disputes/update-seller https://uri.paypal.com/services/payments/payment/authcapture openid https://uri.paypal.com/services/disputes/read-seller https://uri.paypal.com/services/payments/refund https://api.paypal.com/v1/vault/credit-card https://api.paypal.com/v1/payments/.* https://uri.paypal.com/payments/payouts https://api.paypal.com/v1/vault/credit-card/.* https://uri.paypal.com/services/subscriptions https://uri.paypal.com/services/applications/webhooks","access_token":"A21AAERmbLEpFT3FSzdYAkj9Jvw9QWrGe5SEolzuAashoIM0iSg4VT6_2Kq94njAxcGX1AqfCw-DzVmRf4Jx5LUfKnxUSEbNw","token_type":"Bearer","app_id":"APP-80W284485P519543T","expires_in":32400,"nonce":"2019-12-13T09:10:50Zw7t5dBnP7kxQfNiBBUW0YyO_7L2wx9Obf2lquvMxcRA"}
+2019-12-13 16:10:49,613       [55] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/json
+2019-12-13 16:10:49,614       [55] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.9.1 (lang=DOTNET;v=4.5.1;clr=4.0.30319.42000;bit=64;os=Microsoft Windows NT 10.0.18362.0)
+2019-12-13 16:10:49,614       [55] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Bearer A21AAERmbLEpFT3FSzdYAkj9Jvw9QWrGe5SEolzuAashoIM0iSg4VT6_2Kq94njAxcGX1AqfCw-DzVmRf4Jx5LUfKnxUSEbNw
+2019-12-13 16:10:49,614       [55] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:7a652a48-0986-4b8f-89fe-6030e578ff15
+2019-12-13 16:10:49,614       [55] DEBUG PayPal.Api.HttpConnection [(null)] {"intent":"sale","payer":{"payment_method":"paypal"},"transactions":[{"amount":{"currency":"VND","total":"50003","details":{"subtotal":"50000","shipping":"2","tax":"1"}},"description":"Truong Khai testing description","invoice_number":"50706","item_list":{"items":[{"sku":"sku","name":"햛 ","quantity":"1","price":"50000","currency":"VND"}]}}],"redirect_urls":{"return_url":"http://localhost:51530/Cart/PaymentWithPayPal?guid=50706","cancel_url":"http://localhost:51530/Cart/PaymentWithPayPal?guid=50706"}}
+2019-12-13 16:10:50,712       [55] ERROR PayPal.Api.HttpConnection [(null)] Error response:
+2019-12-13 16:10:50,714       [55] ERROR PayPal.Api.HttpConnection [(null)] {"name":"CURRENCY_NOT_ALLOWED","message":"Currency is not supported","information_link":"https://developer.paypal.com/docs/api/payments/#errors","debug_id":"1c761a2fa3837"}
+2019-12-13 16:10:50,715       [55] ERROR PayPal.Api.HttpConnection [(null)] The remote server returned an error: (400) Bad Request.
+2019-12-13 16:10:50,769       [55] ERROR PayPal.PayPalException [(null)] Payments Exception: 
+   Error:    CURRENCY_NOT_ALLOWED
+   Message:  Currency is not supported
+   URI:      https://developer.paypal.com/docs/api/payments/#errors
+   Debug ID: 1c761a2fa3837
+
+2019-12-13 16:25:52,592       [62] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/x-www-form-urlencoded
+2019-12-13 16:25:52,615       [62] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.9.1 (lang=DOTNET;v=4.5.1;clr=4.0.30319.42000;bit=64;os=Microsoft Windows NT 10.0.18362.0)
+2019-12-13 16:25:52,616       [62] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Basic QVZrOHB1b3d4VTZ2emFJZmhidjI2Z2YyYmxTZnBycVlqcTFXRnBWVFEzM0NSTzRacGN0V3p4MVRVYTFOSzJJUmxtYkNLd0d3OHFVVzNLZEY6RU9RWmItZmRmdlZ0X2I2M0hQRFdzQ2FFMVBSY2tETWZYR0V1WjZuTE1wa3lLOFVXTzUxSVVBcGN0TE5wSTFzRXBnSTRWaFUyUDZKR3FzSmY=
+2019-12-13 16:25:52,616       [62] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:21fd0bb7-d035-4bb1-8335-24eae015d36c
+2019-12-13 16:25:53,043       [62] DEBUG PayPal.Api.HttpConnection [(null)] grant_type=client_credentials
+2019-12-13 16:25:54,047       [62] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2019-12-13 16:25:54,048       [62] DEBUG PayPal.Api.HttpConnection [(null)] {"scope":"https://uri.paypal.com/services/invoicing https://uri.paypal.com/services/disputes/read-buyer https://uri.paypal.com/services/payments/realtimepayment https://uri.paypal.com/services/disputes/update-seller https://uri.paypal.com/services/payments/payment/authcapture openid https://uri.paypal.com/services/disputes/read-seller https://uri.paypal.com/services/payments/refund https://api.paypal.com/v1/vault/credit-card https://api.paypal.com/v1/payments/.* https://uri.paypal.com/payments/payouts https://api.paypal.com/v1/vault/credit-card/.* https://uri.paypal.com/services/subscriptions https://uri.paypal.com/services/applications/webhooks","access_token":"A21AAERmbLEpFT3FSzdYAkj9Jvw9QWrGe5SEolzuAashoIM0iSg4VT6_2Kq94njAxcGX1AqfCw-DzVmRf4Jx5LUfKnxUSEbNw","token_type":"Bearer","app_id":"APP-80W284485P519543T","expires_in":31495,"nonce":"2019-12-13T09:10:50Zw7t5dBnP7kxQfNiBBUW0YyO_7L2wx9Obf2lquvMxcRA"}
+2019-12-13 16:25:54,307       [62] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/json
+2019-12-13 16:25:54,307       [62] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.9.1 (lang=DOTNET;v=4.5.1;clr=4.0.30319.42000;bit=64;os=Microsoft Windows NT 10.0.18362.0)
+2019-12-13 16:25:54,307       [62] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Bearer A21AAERmbLEpFT3FSzdYAkj9Jvw9QWrGe5SEolzuAashoIM0iSg4VT6_2Kq94njAxcGX1AqfCw-DzVmRf4Jx5LUfKnxUSEbNw
+2019-12-13 16:25:54,307       [62] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:147ca62e-a26b-451e-a383-e0cdbe9b1f4a
+2019-12-13 16:25:54,307       [62] DEBUG PayPal.Api.HttpConnection [(null)] {"intent":"sale","payer":{"payment_method":"paypal"},"transactions":[{"amount":{"currency":"VND","total":"50003","details":{"subtotal":"50000","shipping":"2","tax":"1"}},"description":"Truong Khai testing description","invoice_number":"41970","item_list":{"items":[{"sku":"sku","name":"햛 thun","quantity":"1","price":"50000","currency":"VND"}]}}],"redirect_urls":{"return_url":"http://localhost:51530/Cart/PaymentWithPayPal?guid=41970","cancel_url":"http://localhost:51530/Cart/PaymentWithPayPal?guid=41970"}}
+2019-12-13 16:25:55,314       [62] ERROR PayPal.Api.HttpConnection [(null)] Error response:
+2019-12-13 16:25:55,316       [62] ERROR PayPal.Api.HttpConnection [(null)] {"name":"CURRENCY_NOT_ALLOWED","message":"Currency is not supported","information_link":"https://developer.paypal.com/docs/api/payments/#errors","debug_id":"3e0d969f536c4"}
+2019-12-13 16:25:55,317       [62] ERROR PayPal.Api.HttpConnection [(null)] The remote server returned an error: (400) Bad Request.
+2019-12-13 16:25:55,363       [62] ERROR PayPal.PayPalException [(null)] Payments Exception: 
+   Error:    CURRENCY_NOT_ALLOWED
+   Message:  Currency is not supported
+   URI:      https://developer.paypal.com/docs/api/payments/#errors
+   Debug ID: 3e0d969f536c4
+
+2019-12-13 16:34:29,495       [62] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/x-www-form-urlencoded
+2019-12-13 16:34:29,495       [62] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.9.1 (lang=DOTNET;v=4.5.1;clr=4.0.30319.42000;bit=64;os=Microsoft Windows NT 10.0.18362.0)
+2019-12-13 16:34:29,495       [62] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Basic QVZrOHB1b3d4VTZ2emFJZmhidjI2Z2YyYmxTZnBycVlqcTFXRnBWVFEzM0NSTzRacGN0V3p4MVRVYTFOSzJJUmxtYkNLd0d3OHFVVzNLZEY6RU9RWmItZmRmdlZ0X2I2M0hQRFdzQ2FFMVBSY2tETWZYR0V1WjZuTE1wa3lLOFVXTzUxSVVBcGN0TE5wSTFzRXBnSTRWaFUyUDZKR3FzSmY=
+2019-12-13 16:34:29,496       [62] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:2471c064-b0ef-4d2e-9396-ab06422b45c6
+2019-12-13 16:34:29,760       [62] DEBUG PayPal.Api.HttpConnection [(null)] grant_type=client_credentials
+2019-12-13 16:34:30,770       [62] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2019-12-13 16:34:30,771       [62] DEBUG PayPal.Api.HttpConnection [(null)] {"scope":"https://uri.paypal.com/services/invoicing https://uri.paypal.com/services/disputes/read-buyer https://uri.paypal.com/services/payments/realtimepayment https://uri.paypal.com/services/disputes/update-seller https://uri.paypal.com/services/payments/payment/authcapture openid https://uri.paypal.com/services/disputes/read-seller https://uri.paypal.com/services/payments/refund https://api.paypal.com/v1/vault/credit-card https://api.paypal.com/v1/payments/.* https://uri.paypal.com/payments/payouts https://api.paypal.com/v1/vault/credit-card/.* https://uri.paypal.com/services/subscriptions https://uri.paypal.com/services/applications/webhooks","access_token":"A21AAERmbLEpFT3FSzdYAkj9Jvw9QWrGe5SEolzuAashoIM0iSg4VT6_2Kq94njAxcGX1AqfCw-DzVmRf4Jx5LUfKnxUSEbNw","token_type":"Bearer","app_id":"APP-80W284485P519543T","expires_in":30978,"nonce":"2019-12-13T09:10:50Zw7t5dBnP7kxQfNiBBUW0YyO_7L2wx9Obf2lquvMxcRA"}
+2019-12-13 16:34:30,771       [62] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/json
+2019-12-13 16:34:30,771       [62] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.9.1 (lang=DOTNET;v=4.5.1;clr=4.0.30319.42000;bit=64;os=Microsoft Windows NT 10.0.18362.0)
+2019-12-13 16:34:30,772       [62] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Bearer A21AAERmbLEpFT3FSzdYAkj9Jvw9QWrGe5SEolzuAashoIM0iSg4VT6_2Kq94njAxcGX1AqfCw-DzVmRf4Jx5LUfKnxUSEbNw
+2019-12-13 16:34:30,772       [62] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:3d620cfa-de83-42d3-ba3c-51c29f48e391
+2019-12-13 16:34:30,772       [62] DEBUG PayPal.Api.HttpConnection [(null)] {"intent":"sale","payer":{"payment_method":"paypal"},"transactions":[{"amount":{"currency":"VND","total":"50003","details":{"subtotal":"50000","shipping":"2","tax":"1"}},"description":"Truong Khai testing description","invoice_number":"3884","item_list":{"items":[{"sku":"sku","name":"햛 thun","quantity":"1","price":"50000","currency":"VND"}]}}],"redirect_urls":{"return_url":"http://localhost:51530/Cart/PaymentWithPayPal?guid=3884","cancel_url":"http://localhost:51530/Cart/PaymentWithPayPal?guid=3884"}}
+2019-12-13 16:34:31,930       [62] ERROR PayPal.Api.HttpConnection [(null)] Error response:
+2019-12-13 16:34:31,931       [62] ERROR PayPal.Api.HttpConnection [(null)] {"name":"CURRENCY_NOT_ALLOWED","message":"Currency is not supported","information_link":"https://developer.paypal.com/docs/api/payments/#errors","debug_id":"1802d76d98d50"}
+2019-12-13 16:34:31,932       [62] ERROR PayPal.Api.HttpConnection [(null)] The remote server returned an error: (400) Bad Request.
+2019-12-13 16:34:31,935       [62] ERROR PayPal.PayPalException [(null)] Payments Exception: 
+   Error:    CURRENCY_NOT_ALLOWED
+   Message:  Currency is not supported
+   URI:      https://developer.paypal.com/docs/api/payments/#errors
+   Debug ID: 1802d76d98d50
+
+2019-12-13 16:36:53,945       [71] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/x-www-form-urlencoded
+2019-12-13 16:36:53,945       [71] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.9.1 (lang=DOTNET;v=4.5.1;clr=4.0.30319.42000;bit=64;os=Microsoft Windows NT 10.0.18362.0)
+2019-12-13 16:36:53,946       [71] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Basic QVZrOHB1b3d4VTZ2emFJZmhidjI2Z2YyYmxTZnBycVlqcTFXRnBWVFEzM0NSTzRacGN0V3p4MVRVYTFOSzJJUmxtYkNLd0d3OHFVVzNLZEY6RU9RWmItZmRmdlZ0X2I2M0hQRFdzQ2FFMVBSY2tETWZYR0V1WjZuTE1wa3lLOFVXTzUxSVVBcGN0TE5wSTFzRXBnSTRWaFUyUDZKR3FzSmY=
+2019-12-13 16:36:53,946       [71] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:569cf684-9069-48aa-a9f2-6e42cbeae247
+2019-12-13 16:36:54,207       [71] DEBUG PayPal.Api.HttpConnection [(null)] grant_type=client_credentials
+2019-12-13 16:36:55,726       [71] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2019-12-13 16:36:55,728       [71] DEBUG PayPal.Api.HttpConnection [(null)] {"scope":"https://uri.paypal.com/services/invoicing https://uri.paypal.com/services/disputes/read-buyer https://uri.paypal.com/services/payments/realtimepayment https://uri.paypal.com/services/disputes/update-seller https://uri.paypal.com/services/payments/payment/authcapture openid https://uri.paypal.com/services/disputes/read-seller https://uri.paypal.com/services/payments/refund https://api.paypal.com/v1/vault/credit-card https://api.paypal.com/v1/payments/.* https://uri.paypal.com/payments/payouts https://api.paypal.com/v1/vault/credit-card/.* https://uri.paypal.com/services/subscriptions https://uri.paypal.com/services/applications/webhooks","access_token":"A21AAERmbLEpFT3FSzdYAkj9Jvw9QWrGe5SEolzuAashoIM0iSg4VT6_2Kq94njAxcGX1AqfCw-DzVmRf4Jx5LUfKnxUSEbNw","token_type":"Bearer","app_id":"APP-80W284485P519543T","expires_in":30833,"nonce":"2019-12-13T09:10:50Zw7t5dBnP7kxQfNiBBUW0YyO_7L2wx9Obf2lquvMxcRA"}
+2019-12-13 16:36:55,730       [71] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/json
+2019-12-13 16:36:55,731       [71] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.9.1 (lang=DOTNET;v=4.5.1;clr=4.0.30319.42000;bit=64;os=Microsoft Windows NT 10.0.18362.0)
+2019-12-13 16:36:55,731       [71] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Bearer A21AAERmbLEpFT3FSzdYAkj9Jvw9QWrGe5SEolzuAashoIM0iSg4VT6_2Kq94njAxcGX1AqfCw-DzVmRf4Jx5LUfKnxUSEbNw
+2019-12-13 16:36:55,732       [71] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:c854900f-ec1a-4d3b-b388-36821fa0b07d
+2019-12-13 16:36:55,732       [71] DEBUG PayPal.Api.HttpConnection [(null)] {"intent":"sale","payer":{"payment_method":"paypal"},"transactions":[{"amount":{"currency":"VND","total":"50003","details":{"subtotal":"50000","shipping":"2","tax":"1"}},"description":"Truong Khai testing description","invoice_number":"15541","item_list":{"items":[{"sku":"sku","name":"햛 thun","quantity":"1","price":"50000","currency":"VND"}]}}],"redirect_urls":{"return_url":"http://localhost:51530/Cart/PaymentWithPayPal?guid=15541","cancel_url":"http://localhost:51530/Cart/PaymentWithPayPal?guid=15541"}}
+2019-12-13 16:36:56,923       [71] ERROR PayPal.Api.HttpConnection [(null)] Error response:
+2019-12-13 16:36:56,923       [71] ERROR PayPal.Api.HttpConnection [(null)] {"name":"CURRENCY_NOT_ALLOWED","message":"Currency is not supported","information_link":"https://developer.paypal.com/docs/api/payments/#errors","debug_id":"bc84bd49409c6"}
+2019-12-13 16:36:56,924       [71] ERROR PayPal.Api.HttpConnection [(null)] The remote server returned an error: (400) Bad Request.
+2019-12-13 16:36:56,925       [71] ERROR PayPal.PayPalException [(null)] Payments Exception: 
+   Error:    CURRENCY_NOT_ALLOWED
+   Message:  Currency is not supported
+   URI:      https://developer.paypal.com/docs/api/payments/#errors
+   Debug ID: bc84bd49409c6
+
+2019-12-13 17:25:38,654       [51] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/x-www-form-urlencoded
+2019-12-13 17:25:38,683       [51] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.9.1 (lang=DOTNET;v=4.5.1;clr=4.0.30319.42000;bit=64;os=Microsoft Windows NT 10.0.18362.0)
+2019-12-13 17:25:38,683       [51] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Basic QVZrOHB1b3d4VTZ2emFJZmhidjI2Z2YyYmxTZnBycVlqcTFXRnBWVFEzM0NSTzRacGN0V3p4MVRVYTFOSzJJUmxtYkNLd0d3OHFVVzNLZEY6RU9RWmItZmRmdlZ0X2I2M0hQRFdzQ2FFMVBSY2tETWZYR0V1WjZuTE1wa3lLOFVXTzUxSVVBcGN0TE5wSTFzRXBnSTRWaFUyUDZKR3FzSmY=
+2019-12-13 17:25:38,683       [51] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:696b6539-38ac-43be-9867-e5eabbeed59c
+2019-12-13 17:25:59,808       [51] ERROR PayPal.Api.HttpConnection [(null)] Unable to connect to the remote server
+2019-12-13 17:25:59,813       [51] DEBUG PayPal.Api.HttpConnection [(null)] There was a problem connecting to the server: ConnectFailure
+2019-12-13 17:25:59,817       [51] INFO  PayPal.Api.HttpConnection [(null)] Retrying....
+2019-12-13 17:26:20,829       [51] ERROR PayPal.Api.HttpConnection [(null)] Unable to connect to the remote server
+2019-12-13 17:26:20,830       [51] DEBUG PayPal.Api.HttpConnection [(null)] There was a problem connecting to the server: ConnectFailure
+2019-12-13 17:26:20,843       [51] ERROR PayPal.PayPalException [(null)] Retried 1 times.... Exception in PayPal.HttpConnection.Execute(). Check log for more details.
+PayPal.PayPalException: Retried 1 times.... Exception in PayPal.HttpConnection.Execute(). Check log for more details.
+2019-12-13 17:31:29,660       [51] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/x-www-form-urlencoded
+2019-12-13 17:31:29,687       [51] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.9.1 (lang=DOTNET;v=4.5.1;clr=4.0.30319.42000;bit=64;os=Microsoft Windows NT 10.0.18362.0)
+2019-12-13 17:31:29,687       [51] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Basic QVZrOHB1b3d4VTZ2emFJZmhidjI2Z2YyYmxTZnBycVlqcTFXRnBWVFEzM0NSTzRacGN0V3p4MVRVYTFOSzJJUmxtYkNLd0d3OHFVVzNLZEY6RU9RWmItZmRmdlZ0X2I2M0hQRFdzQ2FFMVBSY2tETWZYR0V1WjZuTE1wa3lLOFVXTzUxSVVBcGN0TE5wSTFzRXBnSTRWaFUyUDZKR3FzSmY=
+2019-12-13 17:31:29,687       [51] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:cf827f81-dd1f-497c-b3b6-927f3f53b419
+2019-12-13 17:31:30,161       [51] DEBUG PayPal.Api.HttpConnection [(null)] grant_type=client_credentials
+2019-12-13 17:31:31,601       [51] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2019-12-13 17:31:31,603       [51] DEBUG PayPal.Api.HttpConnection [(null)] {"scope":"https://uri.paypal.com/services/invoicing https://uri.paypal.com/services/disputes/read-buyer https://uri.paypal.com/services/payments/realtimepayment https://uri.paypal.com/services/disputes/update-seller https://uri.paypal.com/services/payments/payment/authcapture openid https://uri.paypal.com/services/disputes/read-seller https://uri.paypal.com/services/payments/refund https://api.paypal.com/v1/vault/credit-card https://api.paypal.com/v1/payments/.* https://uri.paypal.com/payments/payouts https://api.paypal.com/v1/vault/credit-card/.* https://uri.paypal.com/services/subscriptions https://uri.paypal.com/services/applications/webhooks","access_token":"A21AAHMwIWflT3gtufzlnj2ZHW6D3TKrDMv71t3Pf9c5WFAGGwWb0TGl1fxreyn-j1blPT-AXo3PkxNe3sA-pZPm7SWJXvQhg","token_type":"Bearer","app_id":"APP-80W284485P519543T","expires_in":32400,"nonce":"2019-12-13T10:31:33ZUB6VYq6vJarBw7xvdu1U0A5BWQ_H3CXPDBxvCjXr1wA"}
+2019-12-13 17:31:31,850       [51] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/json
+2019-12-13 17:31:31,850       [51] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.9.1 (lang=DOTNET;v=4.5.1;clr=4.0.30319.42000;bit=64;os=Microsoft Windows NT 10.0.18362.0)
+2019-12-13 17:31:31,850       [51] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Bearer A21AAHMwIWflT3gtufzlnj2ZHW6D3TKrDMv71t3Pf9c5WFAGGwWb0TGl1fxreyn-j1blPT-AXo3PkxNe3sA-pZPm7SWJXvQhg
+2019-12-13 17:31:31,850       [51] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:ee5cdd04-3a84-4a14-8926-ee9d823681ee
+2019-12-13 17:31:31,851       [51] DEBUG PayPal.Api.HttpConnection [(null)] {"intent":"sale","payer":{"payment_method":"paypal"},"transactions":[{"amount":{"currency":"VND","total":"50003","details":{"subtotal":"50000","shipping":"2","tax":"1"}},"description":"Truong Khai testing description","invoice_number":"64831","item_list":{"items":[{"sku":"sku","name":"햛 thun","quantity":"1","price":"50000","currency":"VND"}]}}],"redirect_urls":{"return_url":"http://localhost:51530/Cart/PaymentWithPayPal?guid=64831","cancel_url":"http://localhost:51530/Cart/PaymentWithPayPal?guid=64831"}}
+2019-12-13 17:31:32,940       [51] ERROR PayPal.Api.HttpConnection [(null)] Error response:
+2019-12-13 17:31:32,941       [51] ERROR PayPal.Api.HttpConnection [(null)] {"name":"CURRENCY_NOT_ALLOWED","message":"Currency is not supported","information_link":"https://developer.paypal.com/docs/api/payments/#errors","debug_id":"cf58f68e612c0"}
+2019-12-13 17:31:32,942       [51] ERROR PayPal.Api.HttpConnection [(null)] The remote server returned an error: (400) Bad Request.
+2019-12-13 17:31:32,986       [51] ERROR PayPal.PayPalException [(null)] Payments Exception: 
+   Error:    CURRENCY_NOT_ALLOWED
+   Message:  Currency is not supported
+   URI:      https://developer.paypal.com/docs/api/payments/#errors
+   Debug ID: cf58f68e612c0
+
+2019-12-13 17:32:39,650       [6] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/x-www-form-urlencoded
+2019-12-13 17:32:39,677       [6] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.9.1 (lang=DOTNET;v=4.5.1;clr=4.0.30319.42000;bit=64;os=Microsoft Windows NT 10.0.18362.0)
+2019-12-13 17:32:39,677       [6] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Basic QVZrOHB1b3d4VTZ2emFJZmhidjI2Z2YyYmxTZnBycVlqcTFXRnBWVFEzM0NSTzRacGN0V3p4MVRVYTFOSzJJUmxtYkNLd0d3OHFVVzNLZEY6RU9RWmItZmRmdlZ0X2I2M0hQRFdzQ2FFMVBSY2tETWZYR0V1WjZuTE1wa3lLOFVXTzUxSVVBcGN0TE5wSTFzRXBnSTRWaFUyUDZKR3FzSmY=
+2019-12-13 17:32:39,677       [6] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:3d442492-37e3-4eab-a5a4-2bfaca3959d4
+2019-12-13 17:32:39,960       [6] DEBUG PayPal.Api.HttpConnection [(null)] grant_type=client_credentials
+2019-12-13 17:32:41,419       [6] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2019-12-13 17:32:41,422       [6] DEBUG PayPal.Api.HttpConnection [(null)] {"scope":"https://uri.paypal.com/services/invoicing https://uri.paypal.com/services/disputes/read-buyer https://uri.paypal.com/services/payments/realtimepayment https://uri.paypal.com/services/disputes/update-seller https://uri.paypal.com/services/payments/payment/authcapture openid https://uri.paypal.com/services/disputes/read-seller https://uri.paypal.com/services/payments/refund https://api.paypal.com/v1/vault/credit-card https://api.paypal.com/v1/payments/.* https://uri.paypal.com/payments/payouts https://api.paypal.com/v1/vault/credit-card/.* https://uri.paypal.com/services/subscriptions https://uri.paypal.com/services/applications/webhooks","access_token":"A21AAHMwIWflT3gtufzlnj2ZHW6D3TKrDMv71t3Pf9c5WFAGGwWb0TGl1fxreyn-j1blPT-AXo3PkxNe3sA-pZPm7SWJXvQhg","token_type":"Bearer","app_id":"APP-80W284485P519543T","expires_in":32330,"nonce":"2019-12-13T10:31:33ZUB6VYq6vJarBw7xvdu1U0A5BWQ_H3CXPDBxvCjXr1wA"}
+2019-12-26 15:45:22,831       [8] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/x-www-form-urlencoded
+2019-12-26 15:45:22,888       [8] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.9.1 (lang=DOTNET;v=4.5.1;clr=4.0.30319.42000;bit=64;os=Microsoft Windows NT 10.0.18362.0)
+2019-12-26 15:45:22,890       [8] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Basic QVZrOHB1b3d4VTZ2emFJZmhidjI2Z2YyYmxTZnBycVlqcTFXRnBWVFEzM0NSTzRacGN0V3p4MVRVYTFOSzJJUmxtYkNLd0d3OHFVVzNLZEY6RU9RWmItZmRmdlZ0X2I2M0hQRFdzQ2FFMVBSY2tETWZYR0V1WjZuTE1wa3lLOFVXTzUxSVVBcGN0TE5wSTFzRXBnSTRWaFUyUDZKR3FzSmY=
+2019-12-26 15:45:22,890       [8] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:c05e1bfb-34a8-42ce-8c1e-440fc73b85c0
+2019-12-26 15:45:23,429       [8] DEBUG PayPal.Api.HttpConnection [(null)] grant_type=client_credentials
+2019-12-26 15:45:25,683       [8] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2019-12-26 15:45:25,685       [8] DEBUG PayPal.Api.HttpConnection [(null)] {"scope":"https://uri.paypal.com/services/invoicing https://uri.paypal.com/services/disputes/read-buyer https://uri.paypal.com/services/payments/realtimepayment https://uri.paypal.com/services/disputes/update-seller https://uri.paypal.com/services/payments/payment/authcapture openid https://uri.paypal.com/services/disputes/read-seller https://uri.paypal.com/services/payments/refund https://api.paypal.com/v1/vault/credit-card https://api.paypal.com/v1/payments/.* https://uri.paypal.com/payments/payouts https://api.paypal.com/v1/vault/credit-card/.* https://uri.paypal.com/services/subscriptions https://uri.paypal.com/services/applications/webhooks","access_token":"A21AAEdi0mKtS5WbfE7had4iV2ecT1JQx4c8dBqsYvrJg_ukqJltS3M35AcNr_osff4NOOHZ_SlyLweYxxGnNe1Br8UgS0p0A","token_type":"Bearer","app_id":"APP-80W284485P519543T","expires_in":32400,"nonce":"2019-12-26T08:45:28ZQjSjQe5tR8XStY3INDfHLDXucGW7s2mvcOwJQgdtaA0"}
+2019-12-26 15:45:26,565       [8] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/json
+2019-12-26 15:45:26,565       [8] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.9.1 (lang=DOTNET;v=4.5.1;clr=4.0.30319.42000;bit=64;os=Microsoft Windows NT 10.0.18362.0)
+2019-12-26 15:45:26,565       [8] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Bearer A21AAEdi0mKtS5WbfE7had4iV2ecT1JQx4c8dBqsYvrJg_ukqJltS3M35AcNr_osff4NOOHZ_SlyLweYxxGnNe1Br8UgS0p0A
+2019-12-26 15:45:26,566       [8] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:f1a4839f-1c42-473f-8ff7-357ffd3d9178
+2019-12-26 15:45:26,566       [8] DEBUG PayPal.Api.HttpConnection [(null)] {"intent":"sale","payer":{"payment_method":"paypal"},"transactions":[{"amount":{"currency":"VND","total":"300003","details":{"subtotal":"300000","shipping":"2","tax":"1"}},"description":"Truong Khai testing description","invoice_number":"32739","item_list":{"items":[{"sku":"sku","name":"햛 ","quantity":"6","price":"50000","currency":"VND"}]}}],"redirect_urls":{"return_url":"http://localhost:51530/Cart/PaymentWithPayPal?guid=32739","cancel_url":"http://localhost:51530/Cart/PaymentWithPayPal?guid=32739"}}
+2019-12-26 15:45:28,651       [8] ERROR PayPal.Api.HttpConnection [(null)] Error response:
+2019-12-26 15:45:28,652       [8] ERROR PayPal.Api.HttpConnection [(null)] {"name":"CURRENCY_NOT_ALLOWED","message":"Currency is not supported","information_link":"https://developer.paypal.com/docs/api/payments/#errors","debug_id":"7d5616f6203d"}
+2019-12-26 15:45:28,653       [8] ERROR PayPal.Api.HttpConnection [(null)] The remote server returned an error: (400) Bad Request.
+2019-12-26 15:45:28,900       [8] ERROR PayPal.PayPalException [(null)] Payments Exception: 
+   Error:    CURRENCY_NOT_ALLOWED
+   Message:  Currency is not supported
+   URI:      https://developer.paypal.com/docs/api/payments/#errors
+   Debug ID: 7d5616f6203d
+
+2019-12-30 19:56:14,516       [5] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/x-www-form-urlencoded
+2019-12-30 19:56:14,578       [5] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.9.1 (lang=DOTNET;v=4.5.1;clr=4.0.30319.42000;bit=64;os=Microsoft Windows NT 10.0.18362.0)
+2019-12-30 19:56:14,578       [5] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Basic QVZrOHB1b3d4VTZ2emFJZmhidjI2Z2YyYmxTZnBycVlqcTFXRnBWVFEzM0NSTzRacGN0V3p4MVRVYTFOSzJJUmxtYkNLd0d3OHFVVzNLZEY6RU9RWmItZmRmdlZ0X2I2M0hQRFdzQ2FFMVBSY2tETWZYR0V1WjZuTE1wa3lLOFVXTzUxSVVBcGN0TE5wSTFzRXBnSTRWaFUyUDZKR3FzSmY=
+2019-12-30 19:56:14,578       [5] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:8f573bda-9be4-49a2-bfdc-b953ba2f97f5
+2019-12-30 19:56:14,882       [5] DEBUG PayPal.Api.HttpConnection [(null)] grant_type=client_credentials
+2019-12-30 19:56:16,926       [5] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2019-12-30 19:56:16,927       [5] DEBUG PayPal.Api.HttpConnection [(null)] {"scope":"https://uri.paypal.com/services/invoicing https://uri.paypal.com/services/disputes/read-buyer https://uri.paypal.com/services/payments/realtimepayment https://uri.paypal.com/services/disputes/update-seller https://uri.paypal.com/services/payments/payment/authcapture openid https://uri.paypal.com/services/disputes/read-seller https://uri.paypal.com/services/payments/refund https://api.paypal.com/v1/vault/credit-card https://api.paypal.com/v1/payments/.* https://uri.paypal.com/payments/payouts https://api.paypal.com/v1/vault/credit-card/.* https://uri.paypal.com/services/subscriptions https://uri.paypal.com/services/applications/webhooks","access_token":"A21AAGHqayej_BNBWd99ZE3_gDrcSiMgHwSrqy1rlt9yVmTjaA_SiEmVvh6oLhuh448CQsvHesuA3NvRSGxBnX9bRt9ugFf8Q","token_type":"Bearer","app_id":"APP-80W284485P519543T","expires_in":32399,"nonce":"2019-12-30T12:56:16ZQ0rlOXYlJtZiroHuHAwDTaZ7CiE4G8oei3kQie3gix4"}
+2019-12-30 19:56:17,597       [5] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/json
+2019-12-30 19:56:17,625       [5] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.9.1 (lang=DOTNET;v=4.5.1;clr=4.0.30319.42000;bit=64;os=Microsoft Windows NT 10.0.18362.0)
+2019-12-30 19:56:17,625       [5] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Bearer A21AAGHqayej_BNBWd99ZE3_gDrcSiMgHwSrqy1rlt9yVmTjaA_SiEmVvh6oLhuh448CQsvHesuA3NvRSGxBnX9bRt9ugFf8Q
+2019-12-30 19:56:17,625       [5] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:230c0804-feb0-47f1-ac52-0f65507b7833
+2019-12-30 19:56:17,625       [5] DEBUG PayPal.Api.HttpConnection [(null)] {"intent":"sale","payer":{"payment_method":"paypal"},"transactions":[{"amount":{"currency":"VND","total":"952003","details":{"subtotal":"952000","shipping":"2","tax":"1"}},"description":"Truong Khai testing description","invoice_number":"73591","item_list":{"items":[{"sku":"sku","name":"Classic Cortez Leather White Black","quantity":"1","price":"952000","currency":"VND"}]}}],"redirect_urls":{"return_url":"http://localhost:51530/Cart/PaymentWithPayPal?guid=1830","cancel_url":"http://localhost:51530/Cart/PaymentWithPayPal?guid=1830"}}
+2019-12-30 19:56:18,884       [5] ERROR PayPal.Api.HttpConnection [(null)] Error response:
+2019-12-30 19:56:18,888       [5] ERROR PayPal.Api.HttpConnection [(null)] {"name":"CURRENCY_NOT_ALLOWED","message":"Currency is not supported","information_link":"https://developer.paypal.com/docs/api/payments/#errors","debug_id":"ffa5b1aa626c6"}
+2019-12-30 19:56:18,890       [5] ERROR PayPal.Api.HttpConnection [(null)] The remote server returned an error: (400) Bad Request.
+2019-12-30 19:56:19,022       [5] ERROR PayPal.PayPalException [(null)] Payments Exception: 
+   Error:    CURRENCY_NOT_ALLOWED
+   Message:  Currency is not supported
+   URI:      https://developer.paypal.com/docs/api/payments/#errors
+   Debug ID: ffa5b1aa626c6
+
+2020-12-20 15:56:23,798       [6] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/x-www-form-urlencoded
+2020-12-20 15:56:23,828       [6] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.9.1 (lang=DOTNET;v=4.5.1;clr=4.0.30319.42000;bit=64;os=Microsoft Windows NT 10.0.18363.0)
+2020-12-20 15:56:24,179       [6] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Basic QVZrOHB1b3d4VTZ2emFJZmhidjI2Z2YyYmxTZnBycVlqcTFXRnBWVFEzM0NSTzRacGN0V3p4MVRVYTFOSzJJUmxtYkNLd0d3OHFVVzNLZEY6RU9RWmItZmRmdlZ0X2I2M0hQRFdzQ2FFMVBSY2tETWZYR0V1WjZuTE1wa3lLOFVXTzUxSVVBcGN0TE5wSTFzRXBnSTRWaFUyUDZKR3FzSmY=
+2020-12-20 15:56:24,179       [6] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:dcc97c0b-9f36-4e5e-be8f-f9920ddb0378
+2020-12-20 15:56:24,481       [6] DEBUG PayPal.Api.HttpConnection [(null)] grant_type=client_credentials
+2020-12-20 15:56:25,751       [6] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2020-12-20 15:56:25,752       [6] DEBUG PayPal.Api.HttpConnection [(null)] {"scope":"https://uri.paypal.com/services/invoicing https://uri.paypal.com/services/disputes/read-buyer https://uri.paypal.com/services/payments/realtimepayment https://uri.paypal.com/services/disputes/update-seller https://uri.paypal.com/services/payments/payment/authcapture openid https://uri.paypal.com/services/disputes/read-seller https://uri.paypal.com/services/payments/refund https://api.paypal.com/v1/vault/credit-card https://api.paypal.com/v1/payments/.* https://uri.paypal.com/payments/payouts https://api.paypal.com/v1/vault/credit-card/.* https://uri.paypal.com/services/subscriptions https://uri.paypal.com/services/applications/webhooks","access_token":"A21AAIsw04_hfldi6iNt2u24Ho2hgfet-vmPaZAWLd-wYoPqBZRdF6CTQDfHqYjCskw1bRl_Nl66lJpN3YymEH7Po-01vV0-A","token_type":"Bearer","app_id":"APP-80W284485P519543T","expires_in":32400,"nonce":"2020-12-20T08:56:30ZOXkUS7lAVrAvf-vnhpdzwuGpKwRoaDQaiRNwLO_h4h8"}
+2020-12-20 15:56:25,974       [6] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/json
+2020-12-20 15:56:25,975       [6] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.9.1 (lang=DOTNET;v=4.5.1;clr=4.0.30319.42000;bit=64;os=Microsoft Windows NT 10.0.18363.0)
+2020-12-20 15:56:25,975       [6] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Bearer A21AAIsw04_hfldi6iNt2u24Ho2hgfet-vmPaZAWLd-wYoPqBZRdF6CTQDfHqYjCskw1bRl_Nl66lJpN3YymEH7Po-01vV0-A
+2020-12-20 15:56:25,975       [6] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:2b00b630-5abb-4d9b-a017-43d2131523bb
+2020-12-20 15:56:25,976       [6] DEBUG PayPal.Api.HttpConnection [(null)] {"intent":"sale","payer":{"payment_method":"paypal"},"transactions":[{"amount":{"currency":"VND","total":"20000003","details":{"subtotal":"20000000","shipping":"2","tax":"1"}},"description":"Truong Khai testing description","invoice_number":"45521","item_list":{"items":[{"sku":"sku","name":"GI픜 ULTRABOOST 20","quantity":"4","price":"5000000","currency":"VND"}]}}],"redirect_urls":{"return_url":"http://localhost:51530/Cart/PaymentWithPayPal?guid=45521","cancel_url":"http://localhost:51530/Cart/PaymentWithPayPal?guid=45521"}}
+2020-12-20 15:56:26,556       [6] ERROR PayPal.Api.HttpConnection [(null)] Error response:
+2020-12-20 15:56:26,556       [6] ERROR PayPal.Api.HttpConnection [(null)] {"name":"VALIDATION_ERROR","message":"Invalid request - see details","debug_id":"d78fc4648a495","information_link":"https://developer.paypal.com/docs/api/payments/#errors","details":[{"field":"transactions[0].amount.details.subtotal","location":"body","issue":"Currency amount must be non-negative number, contain exactly 2 decimal places separated by '.' (JPY contains 0 decimal places), optional thousands separator ',', limited to 7 digits before the decimal point and currency which is a valid ISO Currency Code"},{"field":"transactions[0].amount.total","location":"body","issue":"Currency amount must be non-negative number, contain exactly 2 decimal places separated by '.' (JPY contains 0 decimal places), optional thousands separator ',', limited to 7 digits before the decimal point and currency which is a valid ISO Currency Code"}]}
+2020-12-20 15:56:26,557       [6] ERROR PayPal.Api.HttpConnection [(null)] The remote server returned an error: (400) Bad Request.
+2020-12-20 15:56:26,592       [6] ERROR PayPal.PayPalException [(null)] Payments Exception: 
+   Error:    VALIDATION_ERROR
+   Message:  Invalid request - see details
+   URI:      https://developer.paypal.com/docs/api/payments/#errors
+   Debug ID: d78fc4648a495
+   Details:  transactions[0].amount.details.subtotal -> Currency amount must be non-negative number, contain exactly 2 decimal places separated by '.' (JPY contains 0 decimal places), optional thousands separator ',', limited to 7 digits before the decimal point and currency which is a valid ISO Currency Code
+   Details:  transactions[0].amount.total -> Currency amount must be non-negative number, contain exactly 2 decimal places separated by '.' (JPY contains 0 decimal places), optional thousands separator ',', limited to 7 digits before the decimal point and currency which is a valid ISO Currency Code
+

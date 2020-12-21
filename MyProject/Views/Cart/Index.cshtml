@@ -1,0 +1,127 @@
+﻿@model List<MyProject.Models.CartModel>
+@{
+    ViewBag.Title = "Giỏ hàng";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+@section jsFooter{
+    <script src="~/Contents/js/user-cart-controller.js"></script>
+}
+<style>
+    .btn.btn-outline.red:hover {
+        border-color: #e7505a;
+        color: #fff;
+        background: #e7505a;
+    }
+
+    .btn.btn-outline.red {
+        border-color: #e7505a;
+        color: #e7505a;
+        background: 0 0;
+        border-radius: 20px;
+        width: 27%;
+    }
+
+        .btn.btn-outline.red:active {
+            position: relative;
+            top: 2px;
+        }
+</style>
+<section class="hero hero-page gray-bg padding-small">
+    <div class="container">
+        <div class="row d-flex">
+            <div class="col-lg-9 order-2 order-lg-1">
+                <h2>Giỏ hàng của bạn</h2><p class="lead text-muted">(<span style="color:red;">@Model.Count</span> sản phẩm)</p>
+            </div>
+            <div class="col-lg-3 text-right order-1 order-lg-2">
+                <ul class="breadcrumb justify-content-lg-end">
+                    <li class="breadcrumb-item"><a href="/">Trang chủ</a></li>
+                    <li class="breadcrumb-item active">Giỏ hàng</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Shopping Cart Section-->
+@if (Model.Count > 0)
+{
+    <section class="shopping-cart">
+
+        <div class="container">
+            <div class="basket">
+                <div class="basket-holder">
+                    <div class="basket-header">
+                        <div class="row">
+                            <div class="col-4">Sản phẩm</div>
+                            <div class="col-2">Giá bán</div>
+                            <div class="col-2">Số lượng</div>
+                            <div class="col-2">Thành tiền</div>
+                            <div class="col-2 text-center">Thao tác</div>
+                        </div>
+                    </div>
+                    <div class="basket-body">
+                        <!-- Product-->
+                        @foreach (var item in Model)
+                        {
+                            <div class="item">
+                                <div class="row d-flex align-items-center">
+                                    <div class="col-4">
+                                        <div class="d-flex align-items-center">
+                                            <img src="@item.Product.Image" alt="..." class="img-fluid">
+                                            <div class="title">
+                                                <a href="/chi-tiet/@item.Product.MetaTitle-@item.Product.ID">
+                                                    <h5>@item.Product.Name</h5><span class="text-muted">Size: Large</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-2"><span>@item.Product.Price.GetValueOrDefault(0).ToString("N0")<sup>đ</sup></span></div>
+                                    <div class="col-2">
+                                        <div class="d-flex align-items-center">
+                                            <div class="quantity d-flex align-items-center">
+                                                <div class="dec-btn">-</div>
+                                                <input type="text" class="txtQuantity quantity-no" data-id="@item.Product.ID" value="@item.Quantity">
+                                                <div class="inc-btn">+</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-2"><span>@((item.Product.Price.GetValueOrDefault(0) * item.Quantity).ToString("N0"))<sup>đ</sup></span></div>
+
+                                    <div class="col-2 text-center"><i class="fa fa-trash btn btn-icon-only btn-circle btn-outline red btn-delete" data-id="@item.Product.ID"></i></div>
+                                </div>
+                            </div>
+                        }
+                        <div class="cart-total" style="float:right;">
+                            <strong class="cart-total-title">Total</strong>
+                            <span class="cart-total-price">đ</span>
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="CTAs d-flex align-items-center justify-content-center justify-content-md-end flex-column flex-md-row">
+                <a href="#" id="btnContinue" class="btn btn-template-outlined wide">Tiếp tục mua hàng</a>
+                <a href="#" id="btnUpdate" class="btn btn-template wide">Cập nhật</a>
+                <a href="#" id="btnDeleteAll" class="btn btn-template">Xóa toàn bộ</a>
+                <a href="#" id="btnOrder" class="btn btn-template">Đặt hàng</a>
+                <a href="/Cart/PaymentWithPayPal" class="btn btn-template">Thanh toán bằng PayPal</a>
+
+            </div>
+        </div>
+    </section>
+}
+else
+{
+    <div style="text-align:center; padding:50px;">
+        <img src="~/Contents/Images/cartEmpty.png" alt="Giỏ hàng đang trống">
+        <p style="padding-top:20px;">Không có sản phẩm nào trong giỏ hàng của bạn</p>
+        <a href="/" class="btn btn-warning">Tiếp tục mua hàng</a>
+    </div>
+    @Html.Action("Partial_ListSuggestionsProducts", "Product");
+
+}
+
